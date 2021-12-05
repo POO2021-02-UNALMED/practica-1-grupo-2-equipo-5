@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 
+=======
+# file: ~/.gitignore_global
+.DS_Store
+.idea
+practica-1-grupo-2-equipo-5.iml
+>>>>>>> RamaFredy
