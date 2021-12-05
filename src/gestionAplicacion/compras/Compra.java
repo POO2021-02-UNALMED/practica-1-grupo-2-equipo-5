@@ -1,5 +1,7 @@
 package gestionAplicacion.compras;
 
+import java.util.ArrayList;
+
 public class Compra {
     protected String codigo;
     protected  String descripcion;
@@ -9,6 +11,7 @@ public class Compra {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.direccion = direccion;
+
     }
 
     public Compra() {
