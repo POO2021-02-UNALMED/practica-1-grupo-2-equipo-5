@@ -5,16 +5,19 @@ import gestionAplicacion.empleados.Tecnico;
 import java.util.ArrayList;
 
 public class TipoServicio {
+
+    //Atributos
     private String nombre;
     private Tecnico tecnico;
     private ArrayList<Servicio> servicios;
-    private ArrayList<TipoServicio> tiposDeServicio;
+    private static ArrayList<TipoServicio> tiposDeServicio = new ArrayList<TipoServicio>();
 
     // Se cre el método constructor
 
     public TipoServicio(String nombre, Tecnico tecnico) {
         this.nombre = nombre;
         this.tecnico = tecnico;
+        TipoServicio.tiposDeServicio.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -43,11 +46,11 @@ public class TipoServicio {
         this.servicios = servicios;
     }
 
-    public ArrayList<TipoServicio> getTiposDeServicio() {
+    public static ArrayList<TipoServicio> getTiposDeServicio() {
         return tiposDeServicio;
     }
 
-    public void setTiposDeServicio(ArrayList<TipoServicio> tiposDeServicio) {
-        this.tiposDeServicio = tiposDeServicio;
+    public static void setTiposDeServicio(ArrayList<TipoServicio> tiposDeServicio) {
+        TipoServicio.tiposDeServicio = tiposDeServicio;
     }
 }

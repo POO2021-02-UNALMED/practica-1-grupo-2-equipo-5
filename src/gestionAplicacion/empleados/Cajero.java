@@ -5,15 +5,20 @@ import gestionAplicacion.productos.ProductoVendido;
 import java.util.ArrayList;
 
 public class Cajero extends Empleado{
+
+    // Atributos
     private double cantidadEnVentas;
-    private ArrayList<ProductoVendido> productosVendidos;
-    private ArrayList<Cajero> cajeros;
+    private static ArrayList<Cajero> cajeros = new ArrayList<Cajero>();
+
+    // Atributos de relaciones
+    private ArrayList<ProductoVendido> productosVendidos = new ArrayList<ProductoVendido>();
+
 
     // Se cre el método constructor
-
     public Cajero(String nombre, int cedula, double sueldo, int numeroContacto, String correo, double cantidadEnVentas) {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.cantidadEnVentas = cantidadEnVentas;
+        Cajero.cajeros.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -34,11 +39,11 @@ public class Cajero extends Empleado{
         this.productosVendidos = productosVendidos;
     }
 
-    public ArrayList<Cajero> getCajeros() {
+    public static ArrayList<Cajero> getCajeros() {
         return cajeros;
     }
 
-    public void setCajeros(ArrayList<Cajero> cajeros) {
-        this.cajeros = cajeros;
+    public static void setCajeros(ArrayList<Cajero> cajeros) {
+        Cajero.cajeros = cajeros;
     }
 }

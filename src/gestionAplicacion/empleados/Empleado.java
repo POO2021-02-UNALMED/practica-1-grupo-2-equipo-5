@@ -1,6 +1,8 @@
 package gestionAplicacion.empleados;
 
 public abstract class Empleado {
+
+    // Atributos
     private String nombre;
     private int cedula;
     private double sueldo;

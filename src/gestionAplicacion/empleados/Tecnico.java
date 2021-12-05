@@ -5,17 +5,22 @@ import gestionAplicacion.servicios.TipoServicio;
 import java.util.ArrayList;
 
 public class Tecnico extends Empleado {
+
+    // Atributos
     private int anosExperiencia;
     private int serviciosRealizados;
-    private ArrayList<TipoServicio> tiposDeServicios;
-    private ArrayList<Tecnico> tecnicos;
+    private static ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
+
+    // Atributos de relaciones
+    private ArrayList<TipoServicio> tiposDeServicios =  new ArrayList<TipoServicio>();
+
 
     // Se cre el método constructor
-
     public Tecnico(String nombre, int cedula, double sueldo, int numeroContacto, String correo, int anosExperiencia, int serviciosRealizados) {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.anosExperiencia = anosExperiencia;
         this.serviciosRealizados = serviciosRealizados;
+        Tecnico.tecnicos.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -45,12 +50,12 @@ public class Tecnico extends Empleado {
         this.tiposDeServicios = tiposDeServicios;
     }
 
-    public ArrayList<Tecnico> getTecnicos() {
+    public static ArrayList<Tecnico> getTecnicos() {
         return tecnicos;
     }
 
-    public void setTecnicos(ArrayList<Tecnico> tecnicos) {
-        this.tecnicos = tecnicos;
+    public static void setTecnicos(ArrayList<Tecnico> tecnicos) {
+        Tecnico.tecnicos = tecnicos;
     }
 
 }

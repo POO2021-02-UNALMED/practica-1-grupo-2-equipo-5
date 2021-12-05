@@ -5,19 +5,21 @@ import gestionAplicacion.compras.CompraServicios;
 import java.util.ArrayList;
 
 public class Servicio {
+
+    // Atributos
     private double precio;
     private String descripcion;
     private TipoServicio tipoServicio;
     private CompraServicios compraServicios;
-    private ArrayList<Servicio> servicios;
+    private static ArrayList<Servicio> servicios = new ArrayList<Servicio>();
 
     // Se cre el método constructor
-
     public Servicio(double precio, String descripcion, TipoServicio tipoServicio, CompraServicios compraServicios) {
         this.precio = precio;
         this.descripcion = descripcion;
         this.tipoServicio = tipoServicio;
         this.compraServicios = compraServicios;
+        Servicio.servicios.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -54,12 +56,12 @@ public class Servicio {
         this.compraServicios = compraServicios;
     }
 
-    public ArrayList<Servicio> getServicios() {
+    public static ArrayList<Servicio> getServicios() {
         return servicios;
     }
 
-    public void setServicios(ArrayList<Servicio> servicios) {
-        this.servicios = servicios;
+    public static void setServicios(ArrayList<Servicio> servicios) {
+        Servicio.servicios = servicios;
     }
-    
+
 }
