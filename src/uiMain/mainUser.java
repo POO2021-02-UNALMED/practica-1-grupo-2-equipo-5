@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class mainUser {
     public static void main(String[] args) {
-        static Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int opcion;
         do {
             System.out.println("Bienvenido al sistema de PJ Tech");
