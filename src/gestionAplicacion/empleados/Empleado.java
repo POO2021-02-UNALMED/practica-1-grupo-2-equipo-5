@@ -70,4 +70,6 @@ public abstract class Empleado {
         this.correo = correo;
     }
 
+    public abstract double calcularComision();
+
 }

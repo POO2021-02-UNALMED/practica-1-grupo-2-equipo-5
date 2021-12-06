@@ -45,13 +45,9 @@ public class CompraServicios extends Compra{
         this.tiempoCulminacion = tiempoCulminacion;
     }
 
-    public ArrayList<Servicio> aggServicio(Servicio servicio){
+    public ArrayList<Servicio> agregarServicio(Servicio servicio){
         this.servicios.add(servicio);
         return  this.servicios;
     }
 
-    public static ArrayList<CompraServicios> aggCompra (CompraServicios compra){
-        CompraServicios.compraServicios.add(compra);
-        return CompraServicios.compraServicios;
-    }
 }

@@ -58,4 +58,8 @@ public class Tecnico extends Empleado {
         Tecnico.tecnicos = tecnicos;
     }
 
+    @Override
+    public double calcularComision() {
+        return 0;
+    }
 }
