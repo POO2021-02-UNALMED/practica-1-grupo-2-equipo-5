@@ -14,21 +14,22 @@ public class Devolucion {
 
     private int codigo;
     private String descripcion;
-    private CompraProductos compra_completa;
+    private CompraProductos compraCompleta;
     private ArrayList<ProductoVendido> productos;
 
     /*Devolucion en el caso que sea de una compra completa*/
 
-    public Devolucion(int codigo, String descripcion, CompraProductos compra_completa) {
+    public Devolucion(int codigo, String descripcion, CompraProductos compraCompleta) {
         this.codigo = codigo;
         this.descripcion = descripcion;
-        this.compra_completa = compra_completa;
+        this.compraCompleta = compraCompleta;
+        Devolucion.devoluciones.add(this);
     }
 
     /*Devolucion en el caso que sea de una compra parcial, es decir un conjunto seleccionado de productos pertenecientes
     * a la compra */
 
-    public Devolucion(int codigo, String descripcion, CompraProductos compra_completa, ArrayList<ProductoVendido> productos) {
+    public Devolucion(int codigo, String descripcion, CompraProductos compra_completa, ArrayList<ProductoVendido> productos) {    // Sobrecarga de constructores
         this(codigo, descripcion, compra_completa);         // Manejo de referencia this()
         this.productos = productos;                         // Manejo de referencias this para desambiguar
     }
@@ -57,12 +58,12 @@ public class Devolucion {
         this.descripcion = descripcion;
     }
 
-    public CompraProductos getCompra_completa() {
-        return compra_completa;
+    public CompraProductos getCompraCompleta() {
+        return compraCompleta;
     }
 
-    public void setCompra_completa(CompraProductos compra_completa) {
-        this.compra_completa = compra_completa;
+    public void setCompraCompleta(CompraProductos compraCompleta) {
+        this.compraCompleta = compraCompleta;
     }
 
     public ArrayList<ProductoVendido> getProductos() {

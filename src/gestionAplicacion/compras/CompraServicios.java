@@ -12,11 +12,13 @@ public class CompraServicios extends Compra{
         super(codigo, descripcion, direccion);
         this.servicios = servicios;
         this.tiempoCulminacion = tiempoCulminacion;
+        CompraServicios.compraServicios.add(this);
     }
 
     public CompraServicios(ArrayList<Servicio> servicios, String tiempoCulminacion) {
         this.servicios = servicios;
         this.tiempoCulminacion = tiempoCulminacion;
+        CompraServicios.compraServicios.add(this);
     }
 
     public static ArrayList<CompraServicios> getCompraServicios() {
