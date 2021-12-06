@@ -24,7 +24,7 @@ public class Cliente {
         this.telefono = telefono;
         this.gastos = gastos;
         this.fechaNacimiento = fechaNacimiento;
-        this.clientes.add(this);
+        Cliente.clientes.add(this);
     }
 
     public static ArrayList<Cliente> getClientes() {
@@ -99,12 +99,12 @@ public class Cliente {
         this.regalos = regalos;
     }
 
-    public ArrayList<Compra> aggCompras(Compra compra){
+    public ArrayList<Compra> agregarCompras(Compra compra){
          this.compras.add(compra);
          return  this.compras;
     }
 
-    public ArrayList<Regalo> aggRegalo(Regalo regalo){
+    public ArrayList<Regalo> agregarRegalo(Regalo regalo){
         this.regalos.add(regalo);
         return this.regalos;
     }
