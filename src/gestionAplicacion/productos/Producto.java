@@ -16,7 +16,7 @@ public class Producto {
                                 ACCESORIOS, COMBOS, COMPONENTES, DRONES};                       // Implementacion caso de enumeración
     tipo_producto tipo;
     private double precio;
-    private ArrayList<ProductoVendido> productos_vendidos = new ArrayList<>();
+    private ArrayList<ProductoVendido> productosVendidos = new ArrayList<>();
 
 
     public Producto(int codigo, String nombre, tipo_producto tipo, double precio ) {
@@ -24,6 +24,7 @@ public class Producto {
         this.nombre = nombre;
         this.tipo = tipo;
         this.precio = precio;
+        Producto.inventario.add(this);
     }
 
     public static ArrayList<Producto> getInventario() {
@@ -66,11 +67,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public ArrayList<ProductoVendido> getProductos_vendidos() {
-        return productos_vendidos;
+    public ArrayList<ProductoVendido> getProductosVendidos() {
+        return productosVendidos;
     }
 
-    public void setProductos_vendidos(ArrayList<ProductoVendido> productos_vendidos) {
-        this.productos_vendidos = productos_vendidos;
+    public void setProductosVendidos(ArrayList<ProductoVendido> productosVendidos) {
+        this.productosVendidos = productosVendidos;
     }
 }
