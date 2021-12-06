@@ -10,26 +10,27 @@ public class ProductoVendido {
         Escribir y explicar finalidad de la clase ProductoVendido, junto con sus estructuras de datos cuando sea necesario.
     */
 
-    public static ArrayList<ProductoVendido> productos_vendidos = new ArrayList<>();
+    public static ArrayList<ProductoVendido> productosVendidos = new ArrayList<>();
 
     private double precio;
     private String descripcion;
     private Producto producto;
-    private CompraProductos compra_productos;
+    private CompraProductos compraProductos;
 
-    public ProductoVendido(double precio, String descripcion, Producto producto, CompraProductos compra_productos) {
+    public ProductoVendido(double precio, String descripcion, Producto producto, CompraProductos compraProductos) {
         this.precio = precio;
         this.descripcion = descripcion;
         this.producto = producto;
-        this.compra_productos = compra_productos;
+        this.compraProductos = compraProductos;
+        ProductoVendido.productosVendidos.add(this);
     }
 
-    public static ArrayList<ProductoVendido> getProductos_vendidos() {
-        return productos_vendidos;
+    public static ArrayList<ProductoVendido> getProductosVendidos() {
+        return productosVendidos;
     }
 
-    public static void setProductos_vendidos(ArrayList<ProductoVendido> productos_vendidos) {
-        ProductoVendido.productos_vendidos = productos_vendidos;
+    public static void setProductosVendidos(ArrayList<ProductoVendido> productosVendidos) {
+        ProductoVendido.productosVendidos = productosVendidos;
     }
 
     public double getPrecio() {
@@ -56,11 +57,11 @@ public class ProductoVendido {
         this.producto = producto;
     }
 
-    public CompraProductos getCompra_productos() {
-        return compra_productos;
+    public CompraProductos getCompraProductos() {
+        return compraProductos;
     }
 
-    public void setCompra_productos(CompraProductos compra_productos) {
-        this.compra_productos = compra_productos;
+    public void setCompraProductos(CompraProductos compraProductos) {
+        this.compraProductos = compraProductos;
     }
 }
