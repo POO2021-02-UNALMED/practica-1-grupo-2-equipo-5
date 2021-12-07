@@ -46,4 +46,9 @@ public class Cajero extends Empleado{
     public static void setCajeros(ArrayList<Cajero> cajeros) {
         Cajero.cajeros = cajeros;
     }
+
+    @Override
+    public double calcularComision() {
+        return 0;
+    }
 }

@@ -13,13 +13,13 @@ public class CompraProductos  extends Compra{
         super(codigo, descripcion, direccion);
         this.fechaCompra = fechaCompra;
         this.descuento = descuento;
-        this.comprasProducto.add(this);
+        CompraProductos.comprasProducto.add(this);
     }
 
     public CompraProductos(String fechaCompra, float descuento) {
         this.fechaCompra = fechaCompra;
         this.descuento = descuento;
-        this.comprasProducto.add(this);
+        CompraProductos.comprasProducto.add(this);
     }
 
     public  ArrayList<ProductoVendido> getProductos() {
@@ -54,7 +54,7 @@ public class CompraProductos  extends Compra{
         this.descuento = descuento;
     }
 
-    public ArrayList<ProductoVendido> aggProducto( ProductoVendido producto){
+    public ArrayList<ProductoVendido> agregarProducto( ProductoVendido producto){
         this.productos.add(producto);
         return productos;
     }
