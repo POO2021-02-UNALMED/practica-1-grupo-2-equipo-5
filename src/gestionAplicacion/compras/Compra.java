@@ -1,8 +1,9 @@
 package gestionAplicacion.compras;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Compra {
+public class Compra implements Serializable {
     protected String codigo;
     protected  String descripcion;
     protected String direccion;

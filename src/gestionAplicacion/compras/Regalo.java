@@ -1,8 +1,9 @@
 package gestionAplicacion.compras;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Regalo extends Compra{
+public class Regalo extends Compra implements Serializable {
     private double precio;
     private String descripcion;
     private Cliente clienteRecibe;

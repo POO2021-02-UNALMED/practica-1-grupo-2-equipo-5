@@ -1,8 +1,9 @@
 package gestionAplicacion.productos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Producto {
+public class Producto implements Serializable {
 
     /*
         Escribir y explicar finalidad de la clase Producto, junto con sus estructuras de datos cuando sea necesario.

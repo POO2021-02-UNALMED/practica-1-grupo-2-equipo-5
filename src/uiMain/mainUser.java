@@ -32,5 +32,4 @@ public class mainUser {
 
         } while (opcion != 6);
     }
-
 }

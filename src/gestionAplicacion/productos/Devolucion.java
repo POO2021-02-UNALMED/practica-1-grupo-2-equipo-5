@@ -2,9 +2,10 @@ package gestionAplicacion.productos;
 
 import gestionAplicacion.compras.CompraProductos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Devolucion {
+public class Devolucion implements Serializable {
 
     /*
         Escribir y explicar finalidad de la clase Devolucion, junto con sus estructuras de datos cuando sea necesario.

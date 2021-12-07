@@ -2,9 +2,10 @@ package gestionAplicacion.servicios;
 
 import gestionAplicacion.empleados.Tecnico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TipoServicio {
+public class TipoServicio implements Serializable {
 
     //Atributos
     private String nombre;

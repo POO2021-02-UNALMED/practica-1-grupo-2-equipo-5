@@ -1,9 +1,10 @@
 package gestionAplicacion.compras;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import gestionAplicacion.productos.ProductoVendido;
 
-public class CompraProductos  extends Compra{
+public class CompraProductos  extends Compra implements Serializable {
     private ArrayList<ProductoVendido> productos = new ArrayList<>();
     private static ArrayList<CompraProductos> comprasProducto = new ArrayList<>();
     private String fechaCompra;

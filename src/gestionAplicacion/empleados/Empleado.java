@@ -1,6 +1,8 @@
 package gestionAplicacion.empleados;
 
-public abstract class Empleado {
+import java.io.Serializable;
+
+public abstract class Empleado implements Serializable {
 
     // Atributos
     private String nombre;

@@ -2,9 +2,10 @@ package gestionAplicacion.empleados;
 
 import gestionAplicacion.servicios.TipoServicio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Tecnico extends Empleado {
+public class Tecnico extends Empleado implements Serializable {
 
     // Atributos
     private int anosExperiencia;

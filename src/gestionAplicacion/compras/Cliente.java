@@ -2,9 +2,10 @@ package gestionAplicacion.compras;
 
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente implements Serializable {
 
     private static ArrayList<Cliente> clientes = new ArrayList<>();
     private String cedula;
@@ -99,12 +100,34 @@ public class Cliente {
         this.regalos = regalos;
     }
 
-    public ArrayList<Compra> agregarCompras(Compra compra){
+    /*
+        En los siguentes tres métodos se evidencia sobrecarga de métodos, teneindo en cuenta que en el arreglo de compras
+        del cliente, estas pueden ser de tipo ConpraServicios y CompraProductos
+    */
+
+    public ArrayList<Compra> agregarCompra(Compra compra){
          this.compras.add(compra);
          return  this.compras;
     }
 
-    public ArrayList<Regalo> agregarRegalo(Regalo regalo){
+    public ArrayList<Compra> agregarCompra(CompraServicios compraServicios){
+        this.compras.add(compraServicios);
+        return  this.compras;
+    }
+
+    public ArrayList<Compra> agregarCompra(CompraProductos compraProductos){
+        this.compras.add(compraProductos);
+        return  this.compras;
+    }
+
+    /*
+        Al agragar un regalo, tambies es necesario, hacerle set a este regalo del cliente que lo está regalando y
+        el cliente que lo recibe
+    */
+
+    public ArrayList<Regalo> agregarRegalo(Regalo regalo, Cliente clienteRecibe){
+        regalo.setClienteRegala(this);
+        regalo.setClienteRecibe(clienteRecibe);
         this.regalos.add(regalo);
         return this.regalos;
     }

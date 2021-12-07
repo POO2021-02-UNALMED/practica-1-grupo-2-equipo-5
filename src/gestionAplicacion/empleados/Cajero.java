@@ -2,9 +2,10 @@ package gestionAplicacion.empleados;
 
 import gestionAplicacion.productos.ProductoVendido;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cajero extends Empleado{
+public class Cajero extends Empleado implements Serializable {
 
     // Atributos
     private double cantidadEnVentas;
