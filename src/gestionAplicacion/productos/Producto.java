@@ -74,4 +74,9 @@ public class Producto {
     public void setProductosVendidos(ArrayList<ProductoVendido> productosVendidos) {
         this.productosVendidos = productosVendidos;
     }
+
+    public static  ArrayList<Producto> agregarProducto(Producto producto){
+        Producto.inventario.add(producto);
+        return inventario;
+    }
 }
