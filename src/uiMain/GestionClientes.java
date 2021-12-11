@@ -29,5 +29,4 @@ public class GestionClientes {
 
         } while (opcion != 6);
     }
-
 }

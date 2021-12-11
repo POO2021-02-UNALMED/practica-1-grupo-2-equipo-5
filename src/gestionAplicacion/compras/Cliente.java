@@ -131,4 +131,11 @@ public class Cliente implements Serializable {
         this.regalos.add(regalo);
         return this.regalos;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                '}';
+    }
 }

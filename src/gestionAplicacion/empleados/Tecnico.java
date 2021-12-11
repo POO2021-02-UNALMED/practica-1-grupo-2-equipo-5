@@ -63,4 +63,6 @@ public class Tecnico extends Empleado implements Serializable {
     public double calcularComision() {
         return 0;
     }
+
+    
 }

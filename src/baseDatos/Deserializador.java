@@ -8,81 +8,37 @@ import java.util.ArrayList;
 
 public class Deserializador {
 
-    private static File rutaTemp = new File("src\\baseDatos\\temp\\");
-
     /*
         Este método es el encargado de deserializar las listas que están en cada clase
     */
 
     public static void deserializar() {
 
-        File[] docs = rutaTemp.listFiles();
-        FileInputStream fis;
-        ObjectInputStream ois;
+        FileInputStream fileIn;
+        try {
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
-        for (File file : docs) {
-            if (file.getAbsolutePath().contains("clientes")) {
-                try {
-                    
-                    fis = new FileInputStream(file);
-                    ois = new ObjectInputStream(fis);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
 
-                    /*
-                        Lo que hacemos acá es leer el archivo txt de clientes y haciendo un casteo, volvemos a
-                        colocar todos los clientes en el arreglo de la clase, con su método set
-                    */
+            ArrayList<Cliente> clientes;
 
-                    Cliente.setClientes((ArrayList<Cliente>) ois.readObject());
-                    
-                } catch (FileNotFoundException e) {
-                    
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    
-                } catch (IOException e) {
-                    
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    
-                } catch (ClassNotFoundException e) {
-                    
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    
-                }
-            }
-            else if (file.getAbsolutePath().contains("comprasProductos")) {
-                try {
-                   
-                    fis = new FileInputStream(file);
-                    ois = new ObjectInputStream(fis);
+            clientes = (ArrayList<Cliente>) in.readObject();
 
-                    /*
-                        Lo que hacemos acá es leer el archivo txt de compraProductos y haciendo un casteo, volvemos a
-                        colocar todas las comprasProductos en el arreglo de la clase, con su método set
-                    */
+            Cliente.setClientes(clientes);
 
-                    CompraProductos.setComprasProducto((ArrayList<CompraProductos>) ois.readObject());
-                    
-                }
+            in.close();
+            fileIn.close();
 
-                catch (FileNotFoundException e) {
-                    
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    
-                } catch (IOException e) {
-                    
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    
-                } catch (ClassNotFoundException e) {
-                    
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    
-                }
-            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 }
+
