@@ -24,9 +24,9 @@ public class GestionCompras {
 
             switch (opcion) {
                 case 1: verCompras(); break;
-                case 2: mostrarMenuEliminarCompra(); break;
-                case 3: ; break;
-                case 4: ; break;
+                case 2: ; break;
+                case 3: mostrarMenuEliminarCompra(); break;
+                case 4: menuEditarCompra(); break;
                 case 5: ; break;
                 case 6: break;
             }
@@ -114,6 +114,7 @@ public class GestionCompras {
                     }
 
                 } while (opcion != 3);
+                break;
             }
         }
     }
