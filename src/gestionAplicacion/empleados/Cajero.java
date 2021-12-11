@@ -9,7 +9,6 @@ public class Cajero extends Empleado implements Serializable {
 
     // Atributos
     private double cantidadEnVentas;
-    private static ArrayList<Cajero> cajeros = new ArrayList<Cajero>();
 
     // Atributos de relaciones
     private ArrayList<ProductoVendido> productosVendidos = new ArrayList<ProductoVendido>();
@@ -19,7 +18,7 @@ public class Cajero extends Empleado implements Serializable {
     public Cajero(String nombre, int cedula, double sueldo, int numeroContacto, String correo, double cantidadEnVentas) {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.cantidadEnVentas = cantidadEnVentas;
-        Cajero.cajeros.add(this);
+        Empleado.getEmpleados().add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -38,14 +37,6 @@ public class Cajero extends Empleado implements Serializable {
 
     public void setProductosVendidos(ArrayList<ProductoVendido> productosVendidos) {
         this.productosVendidos = productosVendidos;
-    }
-
-    public static ArrayList<Cajero> getCajeros() {
-        return cajeros;
-    }
-
-    public static void setCajeros(ArrayList<Cajero> cajeros) {
-        Cajero.cajeros = cajeros;
     }
 
     @Override

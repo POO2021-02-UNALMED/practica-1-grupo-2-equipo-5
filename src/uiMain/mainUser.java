@@ -1,5 +1,7 @@
 package uiMain;
 
+import gestionAplicacion.compras.Cliente;
+
 import java.util.Scanner;
 
 public class mainUser {
@@ -8,6 +10,9 @@ public class mainUser {
 
         Scanner input = new Scanner(System.in);
         int opcion;
+
+        Cliente cl1 = new Cliente("1001025017", "jaime", "cra. 65f #30c-21", "3007242377", 125.6,"19/01/2000");
+        Cliente cl2 = new Cliente("1001025017", "andres", "cra. 65f #30c-21", "3007242377", 125.6,"19/01/2000");
 
         do {
             System.out.println("Bienvenido al sistema de PJ Tech");

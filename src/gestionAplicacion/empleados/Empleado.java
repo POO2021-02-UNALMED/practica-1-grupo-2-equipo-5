@@ -1,6 +1,7 @@
 package gestionAplicacion.empleados;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public abstract class Empleado implements Serializable {
 
@@ -11,9 +12,9 @@ public abstract class Empleado implements Serializable {
     private double comision;
     private int numeroContacto;
     private String correo;
+    private static ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
     // Se crea el constructor para los Empleados
-
     public Empleado(String nombre, int cedula, double sueldo, int numeroContacto, String correo) {
         this.nombre = nombre;
         this.cedula = cedula;
@@ -73,5 +74,13 @@ public abstract class Empleado implements Serializable {
     }
 
     public abstract double calcularComision();
+
+    public static ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public static void setEmpleados(ArrayList<Empleado> empleados) {
+        Empleado.empleados = empleados;
+    }
 
 }

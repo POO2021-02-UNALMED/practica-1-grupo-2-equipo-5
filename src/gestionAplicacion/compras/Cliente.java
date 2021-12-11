@@ -131,4 +131,19 @@ public class Cliente implements Serializable {
         this.regalos.add(regalo);
         return this.regalos;
     }
+
+    // Se agrega el método toString()
+
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", gastos=" + gastos +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                '}';
+    }
 }
