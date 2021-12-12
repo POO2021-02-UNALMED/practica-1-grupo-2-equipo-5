@@ -142,7 +142,6 @@ public class Cliente implements Serializable {
     */
 
     public ArrayList<Regalo> agregarRegalo(Regalo regalo, Cliente clienteRecibe){
-        regalo.setClienteRegala(this);
         regalo.setClienteRecibe(clienteRecibe);
         this.regalos.add(regalo);
         return this.regalos;

@@ -25,6 +25,8 @@ public abstract class Empleado implements Serializable {
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados
 
+    // Obtener gastos en pagos a empleados  (IMPLEMENTAR ESTEMÉTODO)  hace parte de la funcionalidad utilidad
+
     @Override
     public abstract String toString();
 

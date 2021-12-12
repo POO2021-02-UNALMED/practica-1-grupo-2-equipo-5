@@ -29,6 +29,7 @@ public class mainUser {
             System.out.println(" 3. Gestionar Servicios");
             System.out.println(" 4. Gestionar Compras");
             System.out.println(" 5. Gestionar Clientes");
+            // Agregar opcion que permita obtener las utilidades de la tienda        Funcionalidad 2
             System.out.println(" 6. Salir");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();

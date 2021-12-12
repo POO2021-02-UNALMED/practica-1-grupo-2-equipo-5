@@ -18,7 +18,7 @@ public class GestionClientes {
             System.out.println(" 2. Registrar Cliente");
             System.out.println(" 3. Eliminar Cliente");
             System.out.println(" 4. Editar Cliente");
-            System.out.println(" 5. Ver clientes valiosos");
+            System.out.println(" 5. Ver clientes valiosos");             // Funcionalidad interesante #1
             System.out.println(" 6. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();

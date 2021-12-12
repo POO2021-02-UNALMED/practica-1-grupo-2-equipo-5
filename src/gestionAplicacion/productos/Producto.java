@@ -16,6 +16,8 @@ public class Producto implements Serializable {
     private enum tipo_producto {COMPUTADORES_PERSONALES, PERIFERICOS, CONSOLAS_DE_VIDEOJUEGOS,
                                 ACCESORIOS, COMBOS, COMPONENTES, DRONES};                       // Implementacion caso de enumeración
     tipo_producto tipo;
+
+    // Agregar atributo de precioCompra y camciar el precio por precioVenta
     private double precio;
     private ArrayList<ProductoVendido> productosVendidos = new ArrayList<>();
 
@@ -27,6 +29,8 @@ public class Producto implements Serializable {
         this.precio = precio;
         Producto.inventario.add(this);
     }
+
+    // implentar metodo para obterner el costo de los productos en invertario, hace parte de la función utilidad
 
     public static ArrayList<Producto> getInventario() {
         return inventario;

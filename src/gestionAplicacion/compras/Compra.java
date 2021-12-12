@@ -19,6 +19,8 @@ public class Compra implements Serializable {
 
     }
 
+    // Implentar método para obtener ganancias con todas las compras realizadas
+
     public Compra() {
     }
 

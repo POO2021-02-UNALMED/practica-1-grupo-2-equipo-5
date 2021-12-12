@@ -3,14 +3,17 @@ package gestionAplicacion.compras;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+// La clase regalo no es interesante por la parte del adminstrador (eliminar)
+
 public class Regalo extends Compra implements Serializable {
+
     private double precio;
     private String descripcion;
     private Cliente clienteRecibe;
     private static ArrayList<Regalo> regalos = new ArrayList<>();
 
-    public Regalo(String codigo, String descripcion, String direccion, double precio, String descripcion1, Cliente clienteRecibe) {
-        super(codigo, descripcion, direccion);
+    public Regalo(int codigo, String descripcion, String direccion,Cliente cliente, double precio, String descripcion1, Cliente clienteRecibe) {
+        super(codigo, descripcion, direccion, cliente);
         this.precio = precio;
         this.descripcion = descripcion1;
         this.clienteRecibe = clienteRecibe;
