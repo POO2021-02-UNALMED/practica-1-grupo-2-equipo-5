@@ -1,56 +1,10 @@
-package uiMain;
+package uiMain.gestionClientes;
 
 import gestionAplicacion.compras.Cliente;
 
 import java.util.Scanner;
 
-public class GestionClientes {
-
-    public static void GestionarCliente() {
-        Scanner input = new Scanner(System.in);
-        int opcion;
-        do {
-            System.out.println("¿Que desea hacer?");
-            System.out.println(" 1. Ver Clientes");
-            System.out.println(" 2. Registrar Cliente");
-            System.out.println(" 3. Eliminar Cliente");
-            System.out.println(" 4. Editar Cliente");
-            System.out.println(" 5. Ver clientes valiosos");
-            System.out.println(" 6. Regresar");
-            System.out.print("Indique su eleccion : ");
-            opcion = input.nextInt();
-
-            switch (opcion) {
-                case 1: verClientes() ; break;
-                case 2: registrarCliente() ; break;
-                case 3: ; break;
-                case 4: ; break;
-                case 5: ; break;
-                case 6: break;
-            }
-
-        } while (opcion != 6);
-    }
-
-    /*
-        Se crea el método verClientes que lo que hace es recorrrer la lista de Clientes y llamarme al
-        método toString() para que imprima por pantalla los datos de cada cliente
-    */
-
-    public static void verClientes() {
-        Scanner input = new Scanner(System.in);
-
-        for (Cliente cliente : Cliente.getClientes()) {
-            System.out.println(cliente);
-        }
-
-        int opcion;
-
-        do {
-            System.out.print("1. Regresar : ");
-            opcion = input.nextInt();
-        } while (opcion != 1);
-    }
+public class RegistroCliente {
 
     /*
         Se crea el método registrarCliente() cuya funcionalidad pedirle al usuario por consola
@@ -61,6 +15,7 @@ public class GestionClientes {
     */
 
     public static void registrarCliente() {
+
         Scanner input = new Scanner(System.in);
 
         String opcion;

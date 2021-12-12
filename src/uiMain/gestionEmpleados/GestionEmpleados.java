@@ -1,4 +1,4 @@
-package uiMain;
+package uiMain.gestionEmpleados;
 
 import java.util.Scanner;
 
@@ -19,10 +19,10 @@ public class GestionEmpleados {
             opcion = input.nextInt();
 
             switch (opcion) {
-                case 1: ; break;
-                case 2: ; break;
-                case 3: ; break;
-                case 4: ; break;
+                case 1: VistaEmpleados.verEmpleados(); break;
+                case 2: RegistroEmpleado.registrarEmpleado(); break;
+                case 3: DespidoEmpleado.despedirEmpleado(); break;
+                case 4: EditaEmpleado.editarEmpleado(); break;
                 case 5: ; break;
                 case 6: break;
             }
