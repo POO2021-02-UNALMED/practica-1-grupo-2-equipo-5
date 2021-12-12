@@ -1,26 +1,33 @@
 package gestionAplicacion.empleados;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public abstract class Empleado implements Serializable {
 
     // Atributos
     private String nombre;
-    private int cedula;
+    private String cedula;
     private double sueldo;
     private double comision;
-    private int numeroContacto;
+    private String numeroContacto;
     private String correo;
+    private static ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
     // Se crea el constructor para los Empleados
-
-    public Empleado(String nombre, int cedula, double sueldo, int numeroContacto, String correo) {
+    public Empleado(String nombre, String cedula, double sueldo, String numeroContacto, String correo) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.sueldo = sueldo;
         this.numeroContacto = numeroContacto;
         this.correo = correo;
     }
+
+    // Se agrega el método toString() para mostrar todos los datos de los empleados
+
+    @Override
+    public abstract String toString();
+
 
     // Se establecen los métodos Getters & Setters
 
@@ -32,11 +39,11 @@ public abstract class Empleado implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -56,11 +63,11 @@ public abstract class Empleado implements Serializable {
         this.comision = comision;
     }
 
-    public int getNumeroContacto() {
+    public String getNumeroContacto() {
         return numeroContacto;
     }
 
-    public void setNumeroContacto(int numeroContacto) {
+    public void setNumeroContacto(String numeroContacto) {
         this.numeroContacto = numeroContacto;
     }
 
@@ -73,5 +80,13 @@ public abstract class Empleado implements Serializable {
     }
 
     public abstract double calcularComision();
+
+    public static ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public static void setEmpleados(ArrayList<Empleado> empleados) {
+        Empleado.empleados = empleados;
+    }
 
 }

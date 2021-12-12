@@ -1,12 +1,17 @@
-package uiMain;
+package uiMain.gestionClientes;
+
+import gestionAplicacion.compras.Cliente;
 
 import java.util.Scanner;
 
 public class GestionClientes {
 
     public static void GestionarCliente() {
+
         Scanner input = new Scanner(System.in);
+
         int opcion;
+
         do {
             System.out.println("¿Que desea hacer?");
             System.out.println(" 1. Ver Clientes");
@@ -17,12 +22,13 @@ public class GestionClientes {
             System.out.println(" 6. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
+            input.nextLine();
 
             switch (opcion) {
-                case 1: ; break;
-                case 2: ; break;
-                case 3: ; break;
-                case 4: ; break;
+                case 1: VistaClientes.verClientes(); break;
+                case 2: RegistroCliente.registrarCliente(); break;
+                case 3: EliminaCliente.eliminarCliente(); break;
+                case 4: EditaCliente.editarCliente(); break;
                 case 5: ; break;
                 case 6: break;
             }

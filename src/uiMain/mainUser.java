@@ -1,6 +1,11 @@
 package uiMain;
 
 import gestionAplicacion.compras.Cliente;
+import gestionAplicacion.empleados.Cajero;
+import gestionAplicacion.empleados.Empleado;
+import gestionAplicacion.empleados.Tecnico;
+import uiMain.gestionClientes.GestionClientes;
+import uiMain.gestionEmpleados.GestionEmpleados;
 import baseDatos.Serializador;
 import baseDatos.Deserializador;
 
