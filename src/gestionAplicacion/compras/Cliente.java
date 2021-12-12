@@ -28,6 +28,22 @@ public class Cliente implements Serializable {
         Cliente.clientes.add(this);
     }
 
+    // Se agrega el método toString() para mostrar todos los datos de los clientes
+
+    @Override
+    public String toString() {
+        return "Cliente : {" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", gastos=" + gastos +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                '}';
+    }
+
+    // Se agregan lo métodos Getters & Setters
+
     public static ArrayList<Cliente> getClientes() {
         return clientes;
     }
@@ -132,10 +148,4 @@ public class Cliente implements Serializable {
         return this.regalos;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                '}';
-    }
 }

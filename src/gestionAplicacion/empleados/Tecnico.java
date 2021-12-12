@@ -10,18 +10,32 @@ public class Tecnico extends Empleado implements Serializable {
     // Atributos
     private int anosExperiencia;
     private int serviciosRealizados;
-    private static ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
 
     // Atributos de relaciones
     private ArrayList<TipoServicio> tiposDeServicios =  new ArrayList<TipoServicio>();
 
-
     // Se cre el método constructor
-    public Tecnico(String nombre, int cedula, double sueldo, int numeroContacto, String correo, int anosExperiencia, int serviciosRealizados) {
+    public Tecnico(String nombre, String cedula, double sueldo, String numeroContacto, String correo, int anosExperiencia, int serviciosRealizados) {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.anosExperiencia = anosExperiencia;
         this.serviciosRealizados = serviciosRealizados;
-        Tecnico.tecnicos.add(this);
+        Empleado.getEmpleados().add(this);
+    }
+
+    // Se agrega el método toString() para mostrar todos los datos de los empleados
+
+    @Override
+    public String toString() {
+        return "Tecnico : {" +
+                "Nombre='" + super.getNombre() + '\'' +
+                ", Cedula=" + super.getCedula() +
+                ", Sueldo=" + super.getSueldo() +
+                ", Comision=" + super.getComision() +
+                ", Numero de Contacto=" + super.getNumeroContacto() +
+                ", Correo='" + super.getCorreo() +
+                ", Años de Experiencia=" + anosExperiencia +
+                ", servicios Realizados=" + serviciosRealizados +
+                '}';
     }
 
     // Se establecen los métodos Getters & Setters
@@ -49,14 +63,6 @@ public class Tecnico extends Empleado implements Serializable {
 
     public void setTiposDeServicios(ArrayList<TipoServicio> tiposDeServicios) {
         this.tiposDeServicios = tiposDeServicios;
-    }
-
-    public static ArrayList<Tecnico> getTecnicos() {
-        return tecnicos;
-    }
-
-    public static void setTecnicos(ArrayList<Tecnico> tecnicos) {
-        Tecnico.tecnicos = tecnicos;
     }
 
     @Override

@@ -9,18 +9,33 @@ public class Cajero extends Empleado implements Serializable {
 
     // Atributos
     private double cantidadEnVentas;
-    private static ArrayList<Cajero> cajeros = new ArrayList<Cajero>();
 
     // Atributos de relaciones
     private ArrayList<ProductoVendido> productosVendidos = new ArrayList<ProductoVendido>();
 
 
     // Se cre el método constructor
-    public Cajero(String nombre, int cedula, double sueldo, int numeroContacto, String correo, double cantidadEnVentas) {
+    public Cajero(String nombre, String cedula, double sueldo, String numeroContacto, String correo, double cantidadEnVentas) {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.cantidadEnVentas = cantidadEnVentas;
-        Cajero.cajeros.add(this);
+        Empleado.getEmpleados().add(this);
     }
+
+    // Se agrega el método toString() para mostrar todos los datos de los empleados
+
+    @Override
+    public String toString() {
+        return "Cajero : {" +
+                "Nombre='" + super.getNombre() + '\'' +
+                ", Cedula=" + super.getCedula() +
+                ", Sueldo=" + super.getSueldo() +
+                ", Comision=" + super.getComision() +
+                ", Numero de Contacto=" + super.getNumeroContacto() +
+                ", Correo='" + super.getCorreo() +
+                ", Cantidad En Ventas=" + cantidadEnVentas +
+                '}';
+    }
+
 
     // Se establecen los métodos Getters & Setters
 
@@ -38,14 +53,6 @@ public class Cajero extends Empleado implements Serializable {
 
     public void setProductosVendidos(ArrayList<ProductoVendido> productosVendidos) {
         this.productosVendidos = productosVendidos;
-    }
-
-    public static ArrayList<Cajero> getCajeros() {
-        return cajeros;
-    }
-
-    public static void setCajeros(ArrayList<Cajero> cajeros) {
-        Cajero.cajeros = cajeros;
     }
 
     @Override
