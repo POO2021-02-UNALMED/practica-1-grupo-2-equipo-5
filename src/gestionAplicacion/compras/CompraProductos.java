@@ -5,38 +5,30 @@ import java.util.ArrayList;
 import gestionAplicacion.productos.ProductoVendido;
 
 public class CompraProductos  extends Compra implements Serializable {
+
     private ArrayList<ProductoVendido> productos = new ArrayList<>();
-    private static ArrayList<CompraProductos> comprasProducto = new ArrayList<>();
     private String fechaCompra;
     private float descuento;
 
-    public CompraProductos(String codigo, String descripcion, String direccion, String fechaCompra, float descuento) {
-        super(codigo, descripcion, direccion);
+    public CompraProductos(int codigo, String descripcion, String direccion,Cliente cliente, String fechaCompra, float descuento) {
+        super(codigo, descripcion, direccion, cliente);
         this.fechaCompra = fechaCompra;
         this.descuento = descuento;
-        CompraProductos.comprasProducto.add(this);
+        Compra.compras.add(this);
     }
 
     public CompraProductos(String fechaCompra, float descuento) {
         this.fechaCompra = fechaCompra;
         this.descuento = descuento;
-        CompraProductos.comprasProducto.add(this);
+        Compra.compras.add(this);
     }
 
-    public  ArrayList<ProductoVendido> getProductos() {
+    public ArrayList<ProductoVendido> getProductos() {
         return productos;
     }
 
     public void setProductos(ArrayList<ProductoVendido> productos) {
         this.productos = productos;
-    }
-
-    public static ArrayList<CompraProductos> getComprasProducto() {
-        return comprasProducto;
-    }
-
-    public static void setComprasProducto(ArrayList<CompraProductos> comprasProducto) {
-        CompraProductos.comprasProducto = comprasProducto;
     }
 
     public String getFechaCompra() {
@@ -58,5 +50,18 @@ public class CompraProductos  extends Compra implements Serializable {
     public ArrayList<ProductoVendido> agregarProducto( ProductoVendido producto){
         this.productos.add(producto);
         return productos;
+    }
+
+    @Override
+    public String toString() {
+        return "CompraProductos{" +
+                "\ncliente=" + cliente.getNombre() +
+                "\ncodigo='" + codigo + '\'' +
+                "\ndescripcion='" + descripcion + '\'' +
+                "\ndireccion='" + direccion + '\'' +
+                "\ncantidad_productos=" + productos.size() +
+                "\nfechaCompra='" + fechaCompra + '\'' +
+                "\ndescuento=" + descuento +
+                '}';
     }
 }

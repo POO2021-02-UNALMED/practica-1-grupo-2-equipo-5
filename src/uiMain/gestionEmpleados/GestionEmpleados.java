@@ -1,5 +1,7 @@
 package uiMain.gestionEmpleados;
 
+import gestionAplicacion.compras.Cliente;
+
 import java.util.Scanner;
 
 public class GestionEmpleados {

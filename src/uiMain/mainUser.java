@@ -6,6 +6,8 @@ import gestionAplicacion.empleados.Empleado;
 import gestionAplicacion.empleados.Tecnico;
 import uiMain.gestionClientes.GestionClientes;
 import uiMain.gestionEmpleados.GestionEmpleados;
+import baseDatos.Serializador;
+import baseDatos.Deserializador;
 
 import java.util.Scanner;
 
@@ -13,10 +15,13 @@ public class mainUser {
 
     public static void main(String[] args) {
 
+        Deserializador.deserializar();
+
         Scanner input = new Scanner(System.in);
         int opcion;
 
         do {
+            System.out.println(Cliente.getClientes().get(0));
             System.out.println("Bienvenido al sistema de PJ Tech");
             System.out.println("¿Que deseas hacer?");
             System.out.println(" 1. Gestionar Empleados");
@@ -34,9 +39,13 @@ public class mainUser {
                 case 3: GestionServicios.GestionarServicios() ; break;
                 case 4: GestionCompras.GestionarCompra() ; break;
                 case 5: GestionClientes.GestionarCliente(); break;
-                case 7  : break;
+                case 6: salirDelSistema(); break;
             }
 
         } while (opcion != 6);
+    }
+
+    public static void salirDelSistema() {
+        Serializador.serializar();
     }
 }

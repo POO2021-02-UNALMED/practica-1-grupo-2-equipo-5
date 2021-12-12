@@ -5,29 +5,21 @@ import java.util.ArrayList;
 import gestionAplicacion.servicios.Servicio;
 
 public class CompraServicios extends Compra implements Serializable {
-    private static ArrayList<CompraServicios> compraServicios = new ArrayList<>();
+
     private ArrayList<Servicio> servicios = new ArrayList<>();
     private String tiempoCulminacion;
 
-    public CompraServicios(String codigo, String descripcion, String direccion, ArrayList<Servicio> servicios, String tiempoCulminacion) {
-        super(codigo, descripcion, direccion);
+    public CompraServicios(int codigo, String descripcion, String direccion,Cliente cliente, ArrayList<Servicio> servicios, String tiempoCulminacion) {
+        super(codigo, descripcion, direccion, cliente);
         this.servicios = servicios;
         this.tiempoCulminacion = tiempoCulminacion;
-        CompraServicios.compraServicios.add(this);
+        Compra.compras.add(this);
     }
 
     public CompraServicios(ArrayList<Servicio> servicios, String tiempoCulminacion) {
         this.servicios = servicios;
         this.tiempoCulminacion = tiempoCulminacion;
-        CompraServicios.compraServicios.add(this);
-    }
-
-    public static ArrayList<CompraServicios> getCompraServicios() {
-        return compraServicios;
-    }
-
-    public static void setCompraServicios(ArrayList<CompraServicios> compraServicios) {
-        CompraServicios.compraServicios = compraServicios;
+        Compra.compras.add(this);
     }
 
     public ArrayList<Servicio> getServicios() {
@@ -51,4 +43,15 @@ public class CompraServicios extends Compra implements Serializable {
         return  this.servicios;
     }
 
+    @Override
+    public String toString() {
+        return "CompraServicios{" +
+                "cliente=" + cliente.getNombre() +
+                "\ncodigo='" + codigo + '\'' +
+                "\ndescripcion='" + descripcion + '\'' +
+                "\ndireccion='" + direccion + '\'' +
+                "\nservicios=" + servicios.size() +
+                "\ntiempoCulminacion='" + tiempoCulminacion + '\'' +
+                '}';
+    }
 }
