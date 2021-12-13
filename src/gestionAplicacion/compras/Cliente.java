@@ -16,7 +16,7 @@ public class Cliente implements Serializable {
     private String fechaNacimiento;
 
     private ArrayList<Compra> compras = new ArrayList<>();
-    private ArrayList<Regalo> regalos = new ArrayList<>();
+
 
     public Cliente(String cedula, String nombre, String direccion, String telefono, double gastos, String fechaNacimiento) {
         this.cedula = cedula;
@@ -108,13 +108,7 @@ public class Cliente implements Serializable {
         this.compras = compras;
     }
 
-    public ArrayList<Regalo> getRegalos() {
-        return regalos;
-    }
 
-    public void setRegalos(ArrayList<Regalo> regalos) {
-        this.regalos = regalos;
-    }
 
     /*
         En los siguentes tres métodos se evidencia sobrecarga de métodos, teneindo en cuenta que en el arreglo de compras
@@ -134,17 +128,6 @@ public class Cliente implements Serializable {
     public ArrayList<Compra> agregarCompra(CompraProductos compraProductos){
         this.compras.add(compraProductos);
         return  this.compras;
-    }
-
-    /*
-        Al agragar un regalo, tambies es necesario, hacerle set a este regalo del cliente que lo está regalando y
-        el cliente que lo recibe
-    */
-
-    public ArrayList<Regalo> agregarRegalo(Regalo regalo, Cliente clienteRecibe){
-        regalo.setClienteRecibe(clienteRecibe);
-        this.regalos.add(regalo);
-        return this.regalos;
     }
 
 }

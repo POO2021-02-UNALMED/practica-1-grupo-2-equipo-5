@@ -19,7 +19,7 @@ public class Producto implements Serializable {
                                 ACCESORIOS, COMBOS, COMPONENTES, DRONES};                       // Implementacion caso de enumeración
     tipo_producto tipo;
 
-    // Agregar atributo de precioCompra y camciar el precio por precioVenta
+    // Agregar atributo de precioCompra y cambiar el precio por precioVenta
     private double precio;
     private ArrayList<ProductoVendido> productosVendidos = new ArrayList<>();
 
