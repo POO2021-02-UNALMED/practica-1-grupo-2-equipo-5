@@ -1,5 +1,7 @@
 package gestionAplicacion.productos;
 
+import gestionAplicacion.servicios.Servicio;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -84,4 +86,44 @@ public class Producto implements Serializable {
         Producto.inventario.add(producto);
         return inventario;
     }
+
+    public static String verProductos() {
+
+        String resultado = "";
+
+        for (Producto producto : inventario) {
+
+
+            // Se resuelve el método to string de la subclase más específica
+            resultado += "\n" + producto.toString();
+
+
+        }
+        return resultado;
+    }
+
+
+    public static boolean eliminarProducto(int codigo) {
+
+        for (Producto producto : inventario) {
+            if (producto.codigo == codigo) {
+                inventario.remove(producto);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static Producto buscarProducto (int codigo) {
+
+        for (Producto producto : inventario) {
+            if (producto.codigo == codigo) {
+
+                return producto;
+            }
+        }
+        return null;
+    }
+
 }

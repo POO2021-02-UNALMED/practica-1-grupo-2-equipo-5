@@ -1,5 +1,7 @@
 package gestionAplicacion.servicios;
 
+import gestionAplicacion.compras.Compra;
+import gestionAplicacion.compras.CompraProductos;
 import gestionAplicacion.compras.CompraServicios;
 
 import java.io.Serializable;
@@ -8,18 +10,20 @@ import java.util.ArrayList;
 public class Servicio implements Serializable {
 
     // Atributos
+    protected static ArrayList<Servicio> servicios = new ArrayList<>();
     private double precio;
     private String descripcion;
     private TipoServicio tipoServicio;
     private CompraServicios compraServicios;
-    private static ArrayList<Servicio> servicios = new ArrayList<Servicio>();
+    private int codigo;
 
     // Se cre el método constructor
-    public Servicio(double precio, String descripcion, TipoServicio tipoServicio, CompraServicios compraServicios) {
+    public Servicio(double precio, String descripcion, TipoServicio tipoServicio, CompraServicios compraServicios, int codigo) {
         this.precio = precio;
         this.descripcion = descripcion;
         this.tipoServicio = tipoServicio;
         this.compraServicios = compraServicios;
+        this.codigo = codigo;
         Servicio.servicios.add(this);
     }
 
@@ -65,4 +69,53 @@ public class Servicio implements Serializable {
         Servicio.servicios = servicios;
     }
 
+
+    public static String verServicio() {
+
+        String resultado = "";
+
+        for (Servicio servicio : servicios) {
+
+
+            // Se resuelve el método to string de la subclase más específica
+            resultado += "\n" + servicios.toString();
+
+
+        }
+        return resultado;
+    }
+
+
+    public static boolean eliminarServicio(int codigo) {
+
+        for (Servicio servicio : servicios) {
+            if (servicio.codigo == codigo) {
+                servicios.remove(servicio);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static Servicio buscarServicio(int codigo) {
+
+        for (Servicio servicio : servicios) {
+            if (servicio.codigo == codigo) {
+
+                return servicio;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Servicio{" +
+                "precio=" + precio +
+                ", descripcion='" + descripcion + '\'' +
+                ", tipoServicio=" + tipoServicio +
+                ", compraServicios=" + compraServicios +
+                '}';
+    }
 }
