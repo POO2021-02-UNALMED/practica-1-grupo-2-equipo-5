@@ -7,6 +7,11 @@ import java.util.ArrayList;
 
 public class Cajero extends Empleado implements Serializable {
 
+    /*
+        La finalidad de la clase consiste en guardar las datos de los Empleados
+        que son Cajeros
+    */
+
     // Atributos
     private double cantidadEnVentas;
 
@@ -22,7 +27,6 @@ public class Cajero extends Empleado implements Serializable {
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados
-
     @Override
     public String toString() {
         return "Cajero : {" +
@@ -38,7 +42,6 @@ public class Cajero extends Empleado implements Serializable {
 
 
     // Se establecen los métodos Getters & Setters
-
     public double getCantidadEnVentas() {
         return cantidadEnVentas;
     }
@@ -55,8 +58,17 @@ public class Cajero extends Empleado implements Serializable {
         this.productosVendidos = productosVendidos;
     }
 
+    // Se calcula la comision respectiva a los cajeros, dependiendo de la
+    // cantidad de productos vendidos por ellos
     @Override
     public double calcularComision() {
-        return 0;
+
+        double comisionTotal = 0;
+
+        for (ProductoVendido productoVendido : productosVendidos) {
+            comisionTotal += productoVendido.getPrecioVenta()*COMISION;
+        }
+
+        return comisionTotal;
     }
 }

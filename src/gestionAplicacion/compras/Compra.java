@@ -1,16 +1,29 @@
 package gestionAplicacion.compras;
 
+import gestionAplicacion.productos.ProductoVendido;
+import gestionAplicacion.servicios.Servicio;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Compra implements Serializable {
 
+    /*
+        La finalidad de esta clase consiste en guardar los datos de las compras
+        que se hacen en la tienda, teniendo en cuenta si son de Productos o de servicios
+    */
+
+    // El Array de clase de compras se encarga de guardar todas las instancias de
+    // Compra para poder guardar y cargarlas en la serializacion
     protected static ArrayList<Compra> compras = new ArrayList<>();
+
+    // Atributos (Encapsulamiento con atributos de visibilidad protected)
     protected Cliente cliente;
     protected int codigo;
     protected String descripcion;
     protected String direccion;
 
+    //Constructor
     public Compra(int codigo, String descripcion, String direccion, Cliente cliente) {
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -19,11 +32,7 @@ public class Compra implements Serializable {
 
     }
 
-    // Implentar método para obtener ganancias con todas las compras realizadas
-
-    public Compra() {
-    }
-
+    // Se agregan lo métodos Getters & Setters
     public Cliente getCliente() {
         return cliente;
     }
@@ -64,7 +73,32 @@ public class Compra implements Serializable {
         Compra.compras = compras;
     }
 
+    // Implentar método para obtener Ingresos con todas las compras realizadas en la tienda
+    public static double obtenerIngresos() {
 
+        double Ingresos = 0;
+
+        for (Compra compra : compras) {
+            if (compra instanceof CompraProductos) {
+                // Ligadura dinámica en tiempo de ejecución
+                for (ProductoVendido producto : ((CompraProductos) compra).getProductos()) {
+                    Ingresos += producto.getPrecioVenta();
+                }
+            }
+            else if (compra instanceof CompraServicios) {
+                // Ligadura dinámica en tiempo de ejecución
+                for (Servicio servicio : ((CompraServicios) compra).getServicios()) {
+                    Ingresos += servicio.getPrecio();
+                }
+            }
+        }
+
+
+
+        return Ingresos;
+    }
+
+    // Metodos que hacen parte del CRUD
     public static String verComprasProductos() {
 
         String resultado = "";
@@ -118,5 +152,6 @@ public class Compra implements Serializable {
         }
         return null;
     }
+
 
 }

@@ -9,8 +9,16 @@ import java.util.ArrayList;
 
 public class Servicio implements Serializable {
 
-    // Atributos
+    /*
+        La finalidad de esta clase es recolectar los datos de los servicios especificos que se hacen
+        en una compra de servicios
+    */
+
+    // El Array de clase de servicio se encarga de guardar todas las instacias
+    // de Servicio para poder guardar y cargarlas en la serializacion
     protected static ArrayList<Servicio> servicios = new ArrayList<>();
+
+    // Atributos
     private double precio;
     private String descripcion;
     private TipoServicio tipoServicio;
@@ -28,7 +36,6 @@ public class Servicio implements Serializable {
     }
 
     // Se establecen los métodos Getters & Setters
-
     public double getPrecio() {
         return precio;
     }

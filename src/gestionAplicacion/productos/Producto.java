@@ -8,38 +8,51 @@ import java.util.ArrayList;
 public class Producto implements Serializable {
 
     /*
-        Escribir y explicar finalidad de la clase Producto, junto con sus estructuras de datos cuando sea necesario.
+        La finalidad de esta clase es guardar los datos de los productos que
+        estan en inventario por la tienda, asi como algunas funcionalidades
+        utiles para la misma.
     */
 
+    // El Array de clase de productos se encarga de guardar todas las instancias de
+    // Producto para poder guardar y cargarlas en la serializacion
+    private static ArrayList<Producto> productos = new ArrayList<>();
+
+
+    // Array encargado de guardar aquellos productos que se encuentran en
+    // inventario
     private static ArrayList<Producto> inventario = new ArrayList<>();
 
+    // Atributos
     private int codigo;
     private String nombre;
-    private enum tipo_producto {COMPUTADORES_PERSONALES, PERIFERICOS, CONSOLAS_DE_VIDEOJUEGOS,
+    // Implementacion caso de enumeración
+    protected enum tipo_producto {COMPUTADORES_PERSONALES, PERIFERICOS, CONSOLAS_DE_VIDEOJUEGOS,
                                 ACCESORIOS, COMBOS, COMPONENTES, DRONES};                       // Implementacion caso de enumeración
     tipo_producto tipo;
 
-    // Agregar atributo de precioCompra y cambiar el precio por precioVenta
-    private double precio;
+    private double precioCompra;
+
+    // El array de productos vendidos hace referencia a la relacion de Producto
+    // con productos Vendidos
     private ArrayList<ProductoVendido> productosVendidos = new ArrayList<>();
 
-
-    public Producto(int codigo, String nombre, tipo_producto tipo, double precio ) {
+    //Constructor
+    public Producto(int codigo, String nombre, tipo_producto tipo, double precioCompra ) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
-        this.precio = precio;
+        this.precioCompra = precioCompra;
+        Producto.productos.add(this);
         Producto.inventario.add(this);
     }
 
-    // implentar metodo para obterner el costo de los productos en invertario, hace parte de la función utilidad
-
+    // Se establecen los métodos Getters & Setters
     public static ArrayList<Producto> getInventario() {
-        return inventario;
+        return productos;
     }
 
-    public static void setInventario(ArrayList<Producto> inventario) {
-        Producto.inventario = inventario;
+    public static void setInventario(ArrayList<Producto> productos) {
+        Producto.productos = productos;
     }
 
     public int getCodigo() {
@@ -66,12 +79,12 @@ public class Producto implements Serializable {
         this.tipo = tipo;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getPrecioCompra() {
+        return precioCompra;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecioCompra(double precioCompra) {
+        this.precioCompra = precioCompra;
     }
 
     public ArrayList<ProductoVendido> getProductosVendidos() {
@@ -82,16 +95,37 @@ public class Producto implements Serializable {
         this.productosVendidos = productosVendidos;
     }
 
-    public static  ArrayList<Producto> agregarProducto(Producto producto){
-        Producto.inventario.add(producto);
-        return inventario;
+    public static ArrayList<Producto> getProductos() {
+        return productos;
     }
 
+    public static void setProductos(ArrayList<Producto> productos) {
+        Producto.productos = productos;
+    }
+
+    // Metodo para obterner el costo de los productos en inventario, hace parte de la función utilidad
+    public static double gastosProductos() {
+        double gastos = 0;
+
+        for (Producto producto : inventario) {
+            gastos += producto.precioCompra;
+        }
+
+        return gastos;
+    }
+
+    // metodo para agregar productos al inventario
+    public static String agregarProductoAInventario(Producto producto){
+        Producto.inventario.add(producto);
+        return "Se agrego el producto al inventario correctamente";
+    }
+
+    // metodos del CRUD
     public static String verProductos() {
 
         String resultado = "";
 
-        for (Producto producto : inventario) {
+        for (Producto producto : productos) {
 
 
             // Se resuelve el método to string de la subclase más específica
@@ -105,6 +139,18 @@ public class Producto implements Serializable {
 
     public static boolean eliminarProducto(int codigo) {
 
+        for (Producto producto : productos) {
+            if (producto.codigo == codigo) {
+                productos.remove(producto);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean eliminarProductoInvetario(int codigo) {
+
         for (Producto producto : inventario) {
             if (producto.codigo == codigo) {
                 inventario.remove(producto);
@@ -117,7 +163,7 @@ public class Producto implements Serializable {
 
     public static Producto buscarProducto (int codigo) {
 
-        for (Producto producto : inventario) {
+        for (Producto producto : productos) {
             if (producto.codigo == codigo) {
 
                 return producto;

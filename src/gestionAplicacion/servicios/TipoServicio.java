@@ -7,14 +7,23 @@ import java.util.ArrayList;
 
 public class TipoServicio implements Serializable {
 
+    /*
+        La finalidad de esta clase es clasificar los diferentes tipos de servicio que puede
+        hacer un tecnico.
+    */
+
+    // El Array de clase de tipoDeServicio se encarga de guardar todas las instancias de
+    // TipoServicio para poder guardar y cargarlas en la serializacion
+    private static ArrayList<TipoServicio> tiposDeServicio = new ArrayList<TipoServicio>();
+
     //Atributos
     private String nombre;
     private Tecnico tecnico;
+
+    // Atributo que proviene de la relacion con servicios
     private ArrayList<Servicio> servicios;
-    private static ArrayList<TipoServicio> tiposDeServicio = new ArrayList<TipoServicio>();
 
     // Se cre el método constructor
-
     public TipoServicio(String nombre, Tecnico tecnico) {
         this.nombre = nombre;
         this.tecnico = tecnico;
@@ -22,7 +31,6 @@ public class TipoServicio implements Serializable {
     }
 
     // Se establecen los métodos Getters & Setters
-
     public String getNombre() {
         return nombre;
     }

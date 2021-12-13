@@ -5,16 +5,28 @@ import java.util.ArrayList;
 
 public abstract class Empleado implements Serializable {
 
-    // Atributos
+    /*
+        La finalidad de esta clase consiste en guardar los datos de los empleados
+        de la empresa, discriminado en sus diferentes papeles dentro de ella
+    */
+
+    // El Array de clase de empleados se encarga de guardar todas las instancias de
+    // Empleado para poder guardar y cargarlas en la serializacion
+    private static ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+
+    // Uso de constante
+    protected static final double COMISION = 0.5;
+
+    // Atributos (Encapsulamiento con atributos de visibilidad private)
     private String nombre;
     private String cedula;
     private double sueldo;
     private double comision;
     private String numeroContacto;
     private String correo;
-    private static ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
-    // Se crea el constructor para los Empleados
+
+    //Constructor
     public Empleado(String nombre, String cedula, double sueldo, String numeroContacto, String correo) {
         this.nombre = nombre;
         this.cedula = cedula;
@@ -24,15 +36,11 @@ public abstract class Empleado implements Serializable {
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados
-
-    // Obtener gastos en pagos a empleados  (IMPLEMENTAR ESTEMÉTODO)  hace parte de la funcionalidad utilidad
-
     @Override
     public abstract String toString();
 
 
     // Se establecen los métodos Getters & Setters
-
     public String getNombre() {
         return nombre;
     }
@@ -81,14 +89,27 @@ public abstract class Empleado implements Serializable {
         this.correo = correo;
     }
 
-    public abstract double calcularComision();
-
     public static ArrayList<Empleado> getEmpleados() {
         return empleados;
     }
 
     public static void setEmpleados(ArrayList<Empleado> empleados) {
         Empleado.empleados = empleados;
+    }
+
+    //Uso de método abstracto
+    public abstract double calcularComision();
+
+    // Obtener gastos en pagos a empleados  hace parte de la funcionalidad utilidad
+    public static double obtenerGastosEnPagosAEmpleados() {
+        double gastos = 0;
+
+        for (Empleado empleado : empleados) {
+            // El método calcularComision se resulve por ligadura dinamica
+            gastos += empleado.sueldo + empleado.calcularComision();
+        }
+
+        return gastos;
     }
 
 }

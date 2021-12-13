@@ -1,11 +1,17 @@
 package gestionAplicacion.empleados;
 
+import gestionAplicacion.servicios.Servicio;
 import gestionAplicacion.servicios.TipoServicio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Tecnico extends Empleado implements Serializable {
+
+    /*
+        La finalidad de la clase consiste en guardar las datos de los Empleados
+        que son Tecnicos
+    */
 
     // Atributos
     private int anosExperiencia;
@@ -23,7 +29,6 @@ public class Tecnico extends Empleado implements Serializable {
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados
-
     @Override
     public String toString() {
         return "Tecnico : {" +
@@ -39,8 +44,6 @@ public class Tecnico extends Empleado implements Serializable {
     }
 
     // Se establecen los métodos Getters & Setters
-
-
     public int getAnosExperiencia() {
         return anosExperiencia;
     }
@@ -65,9 +68,23 @@ public class Tecnico extends Empleado implements Serializable {
         this.tiposDeServicios = tiposDeServicios;
     }
 
+    /*
+        El metodo calcular comision, devuelve la comison de todos los servicios realizados
+        por el técnico
+    */
+
     @Override
     public double calcularComision() {
-        return 0;
+
+        double comisionTotal = 0;
+
+        for (TipoServicio tipoServicio : tiposDeServicios) {
+            for (Servicio servicio : tipoServicio.getServicios()) {
+                comisionTotal += servicio.getPrecio()*COMISION;
+            }
+        }
+
+        return comisionTotal;
     }
 
     

@@ -2,12 +2,25 @@ package gestionAplicacion.compras;
 
 
 
+import gestionAplicacion.productos.ProductoVendido;
+import gestionAplicacion.servicios.Servicio;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cliente implements Serializable {
 
+    /*
+        La finalidad de la clase consiste en guardar los datos de los
+        clientes, que es de alto interes para el administrador de la
+        tienda.
+    */
+
+    // El Array de clase de clientes de encarga de guardar todas las instancias de
+    // Cliente para poder guardar y cargarlas en la serializacion
     private static ArrayList<Cliente> clientes = new ArrayList<>();
+
+    // Atributos (Encapsulamiento con atributos de visibilidad private)
     private String cedula;
     private String nombre;
     private String direccion;
@@ -15,21 +28,22 @@ public class Cliente implements Serializable {
     private double gastos;
     private String fechaNacimiento;
 
+    // Relacion que tiene el cliente con sus compras
     private ArrayList<Compra> compras = new ArrayList<>();
 
 
-    public Cliente(String cedula, String nombre, String direccion, String telefono, double gastos, String fechaNacimiento) {
+    //Constructor
+    public Cliente(String cedula, String nombre, String direccion, String telefono, String fechaNacimiento) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.gastos = gastos;
         this.fechaNacimiento = fechaNacimiento;
+        // Cada que se instancia un objeto Cliente, este se guarda en un array de clase para luego serializar
         Cliente.clientes.add(this);
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los clientes
-
     @Override
     public String toString() {
         return "Cliente : {" +
@@ -43,7 +57,6 @@ public class Cliente implements Serializable {
     }
 
     // Se agregan lo métodos Getters & Setters
-
     public static ArrayList<Cliente> getClientes() {
         return clientes;
     }
@@ -108,26 +121,42 @@ public class Cliente implements Serializable {
         this.compras = compras;
     }
 
-
-
     /*
         En los siguentes tres métodos se evidencia sobrecarga de métodos, teneindo en cuenta que en el arreglo de compras
         del cliente, estas pueden ser de tipo ConpraServicios y CompraProductos
     */
-
-    public ArrayList<Compra> agregarCompra(Compra compra){
-         this.compras.add(compra);
-         return  this.compras;
-    }
-
-    public ArrayList<Compra> agregarCompra(CompraServicios compraServicios){
+    public String agregarCompra(CompraServicios compraServicios){
         this.compras.add(compraServicios);
-        return  this.compras;
+        return  "Se agrego la compra exitosamente";
     }
 
-    public ArrayList<Compra> agregarCompra(CompraProductos compraProductos){
+    public String agregarCompra(CompraProductos compraProductos){
         this.compras.add(compraProductos);
-        return  this.compras;
+        return  "Se agrego la compra exitosamente";
     }
 
+    // En este metodo se calculan los gastos totales del cliente en todas sus compras
+    public double calcularGastos() {
+
+        double gastos = 0;
+
+        for(Compra compra : compras) {
+            if (compra instanceof CompraProductos) {
+                // Ligadura dinámica en tiempo de ejecución
+                for (ProductoVendido producto : ((CompraProductos) compra).getProductos()) {
+                    gastos += producto.getPrecioVenta();
+                }
+            }
+            else if (compra instanceof CompraServicios) {
+                // Ligadura dinámica en tiempo de ejecución
+                for (Servicio servicio : ((CompraServicios) compra).getServicios()) {
+                    gastos += servicio.getPrecio();
+                }
+            }
+        }
+
+        this.setGastos(gastos);
+
+        return gastos;
+    }
 }
