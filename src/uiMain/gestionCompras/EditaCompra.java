@@ -11,7 +11,7 @@ public class EditaCompra {
         int codigo;
 
         while (true) {
-            System.out.print("Ingrese el codigo de la compra a editar :");
+            System.out.print("Ingrese el codigo de la compra a editar : ");
             codigo = input.nextInt();
 
             Compra compra = Compra.buscarCompra(codigo);
@@ -20,7 +20,7 @@ public class EditaCompra {
                 System.out.println("Esa compra no existe en el sistema, intente de nuevo");
             }
             else {
-                System.out.println("Compra encontrada");
+                System.out.println("¡Compra encontrada!");
                 System.out.println(compra);
                 System.out.println("");
                 input = new Scanner(System.in);
@@ -35,11 +35,11 @@ public class EditaCompra {
 
                     switch (opcion) {
                         case 1:
-                            System.out.print("Ingrese la nueva descripción");
+                            System.out.print("Ingrese la nueva descripción : ");
                             compra.setDescripcion(input.next());
                             System.out.println(compra); break;
                         case 2:
-                            System.out.print("Ingrese la nueva direccion");
+                            System.out.print("Ingrese la nueva direccion : ");
                             compra.setDireccion(input.next());
                             System.out.println(compra); break;
                         case 3: break;

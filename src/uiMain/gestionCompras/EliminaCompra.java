@@ -11,7 +11,7 @@ public class EliminaCompra {
         int codigo;
 
         while (true) {
-            System.out.print("Ingrese el codigo de la compra a eliminar :");
+            System.out.print("Ingrese el codigo de la compra a eliminar : ");
             codigo = input.nextInt();
 
             boolean eliminado = Compra.eliminarCompra(codigo);
@@ -20,10 +20,11 @@ public class EliminaCompra {
                 System.out.println("Esa compra no existe en el sistema, intente de nuevo");
             }
             else {
-                System.out.println("Compra eliminada exitosamente");
+                System.out.println("¡Compra eliminada exitosamente!");
                 break;
             }
         }
+
     }
 
 }

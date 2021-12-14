@@ -116,13 +116,14 @@ public class Servicio implements Serializable {
         return null;
     }
 
+    // Se crea el método toString()
     @Override
     public String toString() {
-        return "Servicio{" +
-                "precio=" + precio +
-                ", descripcion='" + descripcion + '\'' +
-                ", tipoServicio=" + tipoServicio +
-                ", compraServicios=" + compraServicios +
+        return "Servicio : {" +
+                "Precio=" + precio +
+                ", Descripcion='" + descripcion + '\'' +
+                ", TipoServicio=" + tipoServicio +
+                ", Compra de Servicios=" + compraServicios +
                 '}';
     }
 }

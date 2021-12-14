@@ -99,35 +99,48 @@ public class Compra implements Serializable {
     }
 
     // Metodos que hacen parte del CRUD
+
+    /*
+        El método verComprasProductos() retorna una cadena de texto con todas las descripciones de los compras realizadas
+        a cargo de un cliente en el sistema
+    */
+
     public static String verComprasProductos() {
 
         String resultado = "";
 
-        for (Compra compra : compras) {
-
-            if (compra instanceof CompraProductos) {
-                // Se resuelve el método to string de la subclase más específica
-                resultado += "\n" + compra.toString();
+        for (int i = 0; i < compras.size(); i++) {
+            if (compras.get(i) instanceof CompraProductos) {
+                resultado += (i+1) + ". " + compras.get(i) + "\n";
             }
 
         }
+
         return resultado;
+
     }
 
     public static String verComprasServicios() {
 
         String resultado = "";
 
-        for (Compra compra : compras) {
-
-            if (compra instanceof CompraServicios) {
-                // Se resuelve el método to string de la subclase más específica
-                // por ligadura dinámica
-                resultado += "\n" + compra.toString();
+        for (int i = 0; i < compras.size(); i++) {
+            if (compras.get(i) instanceof CompraServicios) {
+                resultado += (i+1) + ". " + compras.get(i) + "\n";
             }
 
         }
+
         return resultado;
+
+    }
+
+    /*
+        El método agregarCompra() recibe por parámetro una compra para añadir a la lista de compras
+    */
+
+    public static void agregarCompra(Compra compra) {
+        compras.add(compra);
     }
 
     public static boolean eliminarCompra(int codigo) {
@@ -150,7 +163,9 @@ public class Compra implements Serializable {
                 return compra;
             }
         }
+
         return null;
+
     }
 
 

@@ -22,7 +22,7 @@ public class GestionCompras {
 
             switch (opcion) {
                 case 1: VistaCompras.verCompras(); break;
-                case 2: ; break;
+                case 2: RegistroCompra.registrarCompra(); break;
                 case 3: EliminaCompra.mostrarMenuEliminarCompra(); break;
                 case 4: EditaCompra.menuEditarCompra(); break;
                 case 5: ; break;

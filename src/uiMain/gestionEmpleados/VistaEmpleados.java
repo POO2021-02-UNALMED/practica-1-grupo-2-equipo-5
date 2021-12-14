@@ -18,7 +18,7 @@ public class VistaEmpleados {
         Scanner input = new Scanner(System.in);
 
         // Se imprime la lista de clientes haciendo llamado al método verClientes() de la clase Cliente (CRUD)
-        System.out.println(Empleado.verEmpleados());
+        System.out.print(Empleado.verEmpleados());
 
         int opcion;
 

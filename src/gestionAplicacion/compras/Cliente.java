@@ -165,8 +165,8 @@ public class Cliente implements Serializable {
     public static String verClientes() {
         String resultado = "";
 
-        for (Cliente cliente : clientes) {
-            resultado += cliente.toString() + "\n";
+        for (int i = 0; i < clientes.size(); i++) {
+            resultado += (i+1) + ". " + clientes.get(i) + "\n";
         }
 
         return resultado;

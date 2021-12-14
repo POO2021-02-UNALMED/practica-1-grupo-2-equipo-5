@@ -22,11 +22,10 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
     private float descuento;
 
     //Constructor
-    public CompraProductos(int codigo, String descripcion, String direccion,Cliente cliente, String fechaCompra) {
+    public CompraProductos(int codigo, String descripcion, String direccion, Cliente cliente, String fechaCompra) {
         super(codigo, descripcion, direccion, cliente);
         this.fechaCompra = fechaCompra;
         this.descuento = 0;
-        Compra.compras.add(this);
     }
 
     //Sobrecarga de constructores
@@ -69,14 +68,14 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
     // Se agrega el método toString() para mostrar todos los datos
     @Override
     public String toString() {
-        return "CompraProductos{" +
-                "\ncliente=" + cliente.getNombre() +
-                "\ncodigo='" + codigo + '\'' +
-                "\ndescripcion='" + descripcion + '\'' +
-                "\ndireccion='" + direccion + '\'' +
-                "\ncantidad_productos=" + productos.size() +
-                "\nfechaCompra='" + fechaCompra + '\'' +
-                "\ndescuento=" + descuento +
+        return "CompraProductos : {" +
+                "Cliente=" + cliente.getNombre() +
+                ", Codigo='" + codigo + '\'' +
+                ", Descripcion='" + descripcion + '\'' +
+                ", Direccion='" + direccion + '\'' +
+                ", Cantidad de Productos=" + productos.size() +
+                ", Fecha de Compra='" + fechaCompra + '\'' +
+                ", Descuento=" + descuento +
                 '}';
     }
 

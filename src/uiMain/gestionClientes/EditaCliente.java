@@ -12,9 +12,7 @@ public class EditaCliente {
 
         System.out.println("Clientes: ");
 
-        for (int i = 0; i < Cliente.getClientes().size(); i++) {
-            System.out.println((i+1) + " " + Cliente.getClientes().get(i));
-        }
+        System.out.print(Cliente.verClientes());
 
         System.out.print("Elige un cliente a editar: ");
         int editaCliente = input.nextInt();

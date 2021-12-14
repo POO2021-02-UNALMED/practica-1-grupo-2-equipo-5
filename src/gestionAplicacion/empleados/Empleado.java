@@ -126,8 +126,8 @@ public abstract class Empleado implements Serializable {
     public static String verEmpleados() {
         String resultado = "";
 
-        for (Empleado empleado : empleados) {
-            resultado += empleado.toString() + "\n";
+        for (int i = 0; i < empleados.size(); i++) {
+            resultado += (i+1) + ". " + empleados.get(i) + "\n";
         }
 
         return resultado;

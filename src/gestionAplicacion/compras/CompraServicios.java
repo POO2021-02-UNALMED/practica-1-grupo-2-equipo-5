@@ -22,7 +22,6 @@ public class CompraServicios extends Compra implements Serializable {
     public CompraServicios(int codigo, String descripcion, String direccion,Cliente cliente, String tiempoCulminacion) {
         super(codigo, descripcion, direccion, cliente);
         this.tiempoCulminacion = tiempoCulminacion;
-        Compra.compras.add(this);
     }
 
     // Se agregan lo métodos Getters & Setters
@@ -51,13 +50,13 @@ public class CompraServicios extends Compra implements Serializable {
     // Se agrega el método toString() para mostrar todos los datos
     @Override
     public String toString() {
-        return "CompraServicios{" +
-                "cliente=" + cliente.getNombre() +
-                "\ncodigo='" + codigo + '\'' +
-                "\ndescripcion='" + descripcion + '\'' +
-                "\ndireccion='" + direccion + '\'' +
-                "\nservicios=" + servicios.size() +
-                "\ntiempoCulminacion='" + tiempoCulminacion + '\'' +
+        return "CompraServicios : {" +
+                "Cliente=" + cliente.getNombre() +
+                ", Codigo='" + codigo + '\'' +
+                ", Descripcion='" + descripcion + '\'' +
+                ", Direccion='" + direccion + '\'' +
+                ", Servicios=" + servicios.size() +
+                ", Tiempo de Culminacion='" + tiempoCulminacion + '\'' +
                 '}';
     }
 }
