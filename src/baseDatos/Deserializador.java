@@ -198,7 +198,7 @@ public class Deserializador {
 
             tipoServicios = (ArrayList<TipoServicio>) in.readObject();
 
-            TipoServicio.getTiposDeServicio(tipoServicios);
+            TipoServicio.setTiposDeServicio(tipoServicios);
 
             in.close();
             fileIn.close();
