@@ -1,18 +1,18 @@
-package uiMain;
+package uiMain.gestionProductos;
 
 import java.util.Scanner;
 
-public class GestionServicios {
+public class GestionProductos {
 
-    public static void GestionarServicios() {
+    public static void GestionarProductos() {
         Scanner input = new Scanner(System.in);
         int opcion;
         do {
             System.out.println("¿Que desea hacer?");
-            System.out.println(" 1. Ver Servicios");
-            System.out.println(" 2. Crear Servicio");
-            System.out.println(" 3. Eliminar Servicio");
-            System.out.println(" 4. Editar Servicio");
+            System.out.println(" 1. Ver Productos");
+            System.out.println(" 2. Crear Producto");
+            System.out.println(" 3. Eliminar Producto");
+            System.out.println(" 4. Editar Producto");
             System.out.println(" 5. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();

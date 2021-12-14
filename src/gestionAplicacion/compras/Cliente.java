@@ -1,10 +1,7 @@
 package gestionAplicacion.compras;
 
-
-
 import gestionAplicacion.productos.ProductoVendido;
 import gestionAplicacion.servicios.Servicio;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -39,8 +36,6 @@ public class Cliente implements Serializable {
         this.direccion = direccion;
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
-        // Cada que se instancia un objeto Cliente, este se guarda en un array de clase para luego serializar
-        Cliente.clientes.add(this);
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los clientes
@@ -159,4 +154,38 @@ public class Cliente implements Serializable {
 
         return gastos;
     }
+
+    // Metodos que hacen parte del CRUD
+
+    /*
+        El método verClientes() retorna una cadena de texto con todas las descripciones de los clientes creados
+        o que estén en el sistema
+    */
+
+    public static String verClientes() {
+        String resultado = "";
+
+        for (Cliente cliente : clientes) {
+            resultado += cliente.toString() + "\n";
+        }
+
+        return resultado;
+    }
+
+    /*
+        El método agregarCliente() recibe por parámetro un empleado para añadir a la lista de clientes
+    */
+
+    public static void agregarCliente(Cliente cliente) {
+        clientes.add(cliente);
+    }
+
+    /*
+        El método eliminarCliente() recibe por parámetro un empleado a eliminar de la lista de clientes
+    */
+
+    public static void eliminarCliente(Cliente cliente) {
+        clientes.remove(cliente);
+    }
+
 }

@@ -23,7 +23,6 @@ public class Cajero extends Empleado implements Serializable {
     public Cajero(String nombre, String cedula, double sueldo, String numeroContacto, String correo, double cantidadEnVentas) {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.cantidadEnVentas = cantidadEnVentas;
-        Empleado.getEmpleados().add(this);
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados
@@ -71,4 +70,6 @@ public class Cajero extends Empleado implements Serializable {
 
         return comisionTotal;
     }
+
+
 }

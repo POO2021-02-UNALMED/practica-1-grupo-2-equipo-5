@@ -25,7 +25,6 @@ public class Tecnico extends Empleado implements Serializable {
         super(nombre, cedula, sueldo, numeroContacto, correo);
         this.anosExperiencia = anosExperiencia;
         this.serviciosRealizados = serviciosRealizados;
-        Empleado.getEmpleados().add(this);
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados

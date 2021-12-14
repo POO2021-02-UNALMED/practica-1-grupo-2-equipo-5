@@ -11,20 +11,18 @@ public class VistaClientes {
         método toString() para que imprima por pantalla los datos de cada cliente
     */
 
-    public static void verClientes() {
+    public static void mostrarClientes() {
 
         Scanner input = new Scanner(System.in);
 
-        for (Cliente cliente : Cliente.getClientes()) {
-            System.out.println(cliente);
-        }
+        // Se imprime la lista de clientes haciendo llamado al método verClientes() de la clase Cliente (CRUD)
+        System.out.print(Cliente.verClientes());
 
         int opcion;
 
         do {
             System.out.print("1. Regresar : ");
-            opcion = input.nextInt();
-            input.nextLine();
+            opcion = Integer.parseInt(input.nextLine());
         } while (opcion != 1);
 
     }

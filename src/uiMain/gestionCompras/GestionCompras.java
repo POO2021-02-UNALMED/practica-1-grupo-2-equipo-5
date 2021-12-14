@@ -1,4 +1,4 @@
-package uiMain;
+package uiMain.gestionCompras;
 
 import gestionAplicacion.compras.Compra;
 import gestionAplicacion.compras.CompraProductos;

@@ -1,5 +1,9 @@
 package gestionAplicacion.empleados;
 
+import gestionAplicacion.compras.Compra;
+import gestionAplicacion.compras.CompraProductos;
+import gestionAplicacion.compras.CompraServicios;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -111,5 +115,39 @@ public abstract class Empleado implements Serializable {
 
         return gastos;
     }
+
+    // Metodos que hacen parte del CRUD
+
+    /*
+        El método verEmpleados() retorna una cadena de texto con todas las descripciones de los empleados creados
+        o que estén en el sistema
+    */
+
+    public static String verEmpleados() {
+        String resultado = "";
+
+        for (Empleado empleado : empleados) {
+            resultado += empleado.toString() + "\n";
+        }
+
+        return resultado;
+    }
+
+    /*
+        El método agregarEmpleado() recibe por parámetro un empleado para añadir a la lista de empleados
+    */
+
+    public static void agregarEmpleado(Empleado empleado) {
+        empleados.add(empleado);
+    }
+
+    /*
+        El método eliminarEmpleado() recibe por parámetro un empleado a eliminar de la lista de empleados
+    */
+
+    public static void eliminarEmpleado(Empleado empleado) {
+        empleados.remove(empleado);
+    }
+
 
 }

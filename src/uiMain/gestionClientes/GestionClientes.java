@@ -25,7 +25,7 @@ public class GestionClientes {
             input.nextLine();
 
             switch (opcion) {
-                case 1: VistaClientes.verClientes(); break;
+                case 1: VistaClientes.mostrarClientes(); break;
                 case 2: RegistroCliente.registrarCliente(); break;
                 case 3: EliminaCliente.eliminarCliente(); break;
                 case 4: EditaCliente.editarCliente(); break;

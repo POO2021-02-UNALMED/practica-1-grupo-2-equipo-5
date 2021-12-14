@@ -18,7 +18,7 @@ public class RegistroCliente {
 
         Scanner input = new Scanner(System.in);
 
-        String opcion;
+        int opcion;
 
         do {
             System.out.print("Cedula: ");
@@ -31,16 +31,14 @@ public class RegistroCliente {
             String telefono = input.nextLine();
             System.out.print("Fecha de Nacimiento: ");
             String fechaNacimiento = input.nextLine();
-            System.out.print("Gastos: ");
-            double gastos = input.nextDouble();
-            input.nextLine();
 
-            new Cliente(cedula, nombre, direccion, telefono, gastos, fechaNacimiento);
+            Cliente.agregarCliente(new Cliente(cedula, nombre, direccion, telefono, fechaNacimiento));
 
-            System.out.print("¡Cliente creado con éxito!, ¿Desea añadir otro cliente? [si/no] : ");
-            opcion = input.nextLine();
+            System.out.println("¡Cliente creado con éxito!");
+            System.out.print(" 1. Regresar : ");
+            opcion = Integer.parseInt(input.nextLine());
 
-        } while(opcion.equals("si"));
+        } while(opcion != 1);
 
     }
 

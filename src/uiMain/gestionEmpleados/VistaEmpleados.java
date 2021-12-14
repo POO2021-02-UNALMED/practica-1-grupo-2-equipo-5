@@ -1,5 +1,6 @@
 package uiMain.gestionEmpleados;
 
+import gestionAplicacion.compras.Cliente;
 import gestionAplicacion.empleados.Empleado;
 
 import java.util.Scanner;
@@ -12,21 +13,19 @@ public class VistaEmpleados {
          los datos de cada empleado
     */
 
-    public static void verEmpleados() {
+    public static void mostrarEmpleados() {
 
         Scanner input = new Scanner(System.in);
 
-        for (Empleado empleado : Empleado.getEmpleados()) {
-            System.out.println(empleado);
-        }
+        // Se imprime la lista de clientes haciendo llamado al método verClientes() de la clase Cliente (CRUD)
+        System.out.println(Empleado.verEmpleados());
 
-        int opcionEmp;
+        int opcion;
 
         do {
             System.out.print("1. Regresar : ");
-            opcionEmp = input.nextInt();
-            input.nextLine();
-        } while (opcionEmp != 1);
+            opcion = Integer.parseInt(input.nextLine());
+        } while (opcion != 1);
 
     }
 

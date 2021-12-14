@@ -1,7 +1,5 @@
 package uiMain.gestionEmpleados;
 
-import gestionAplicacion.compras.Cliente;
-
 import java.util.Scanner;
 
 public class GestionEmpleados {
@@ -21,7 +19,7 @@ public class GestionEmpleados {
             opcion = input.nextInt();
 
             switch (opcion) {
-                case 1: VistaEmpleados.verEmpleados(); break;
+                case 1: VistaEmpleados.mostrarEmpleados(); break;
                 case 2: RegistroEmpleado.registrarEmpleado(); break;
                 case 3: DespidoEmpleado.despedirEmpleado(); break;
                 case 4: EditaEmpleado.editarEmpleado(); break;

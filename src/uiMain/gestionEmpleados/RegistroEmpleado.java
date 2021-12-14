@@ -1,8 +1,8 @@
 package uiMain.gestionEmpleados;
 
 import gestionAplicacion.empleados.Cajero;
+import gestionAplicacion.empleados.Empleado;
 import gestionAplicacion.empleados.Tecnico;
-
 import java.util.Scanner;
 
 public class RegistroEmpleado {
@@ -19,83 +19,60 @@ public class RegistroEmpleado {
 
         Scanner input = new Scanner(System.in);
 
-        String opcion;
+        int opcion;
 
         do {
-            int empleadoARegistrar;
+            System.out.println("¿Qué tipo de empleado desea registrar?");
+            System.out.println(" 1. Cajero");
+            System.out.println(" 2. Tecnico");
+            System.out.print("Indique su eleccion : ");
+            int eleccion = Integer.parseInt(input.nextLine());
 
-            do {
-                System.out.println("¿Qué empleado desea registrar?");
-                System.out.println(" 1. Cajero");
-                System.out.println(" 2. Tecnico");
-                System.out.println(" 3. Regresar");
-                System.out.print("Indique su eleccion : ");
-                empleadoARegistrar = input.nextInt();
+            if (eleccion == 1) {
+                System.out.print("Nombre: ");
+                String nombre = input.nextLine();
+                System.out.print("Cedula: ");
+                String cedula = input.nextLine();
+                System.out.print("Sueldo: ");
+                double sueldo= input.nextDouble();
+                input.nextLine();
+                System.out.print("Numero de Contacto: ");
+                String numeroContacto = input.nextLine();
+                System.out.print("Correo: ");
+                String correo = input.nextLine();
+                System.out.print("Cantidad en ventas: ");
+                double cantidadEnVentas = input.nextDouble();
                 input.nextLine();
 
-                switch (empleadoARegistrar) {
-                    case 1:
-                        System.out.print("Nombre: ");
-                        String nombreCajero = input.nextLine();
-                        System.out.print("Cedula: ");
-                        String cedulaCajero = input.nextLine();
-                        System.out.print("Sueldo: ");
-                        double sueldoCajero = input.nextDouble();
-                        input.nextLine();
-                        System.out.print("Numero de Contacto: ");
-                        String numeroContactoCajero = input.nextLine();
-                        System.out.print("Correo: ");
-                        String correoCajero = input.nextLine();
-                        System.out.print("Cantidad en ventas: ");
-                        double cantidadEnVentas = input.nextDouble();
-                        input.nextLine();
+                Empleado.agregarEmpleado(new Cajero(nombre, cedula, sueldo, numeroContacto, correo, cantidadEnVentas));
+            }
 
-                        new Cajero(nombreCajero, cedulaCajero, sueldoCajero, numeroContactoCajero, correoCajero, cantidadEnVentas);
+            else  if (eleccion == 2) {
+                System.out.print("Nombre: ");
+                String nombre = input.nextLine();
+                System.out.print("Cedula: ");
+                String cedula = input.nextLine();
+                System.out.print("Sueldo: ");
+                double sueldo= Double.parseDouble(input.nextLine());
+                System.out.print("Numero de Contacto: ");
+                String numeroContacto = input.nextLine();
+                System.out.print("Correo: ");
+                String correo = input.nextLine();
+                System.out.print("Años de experiencia: ");
+                int anosExperiencia = Integer.parseInt(input.nextLine());
+                System.out.print("Servicios Realizados: ");
+                int serviciosRealizados = Integer.parseInt(input.nextLine());
 
-                        System.out.println("¡Cajero creado con éxito!");
+                Empleado.agregarEmpleado(new Tecnico(nombre, cedula, sueldo, numeroContacto, correo, anosExperiencia, serviciosRealizados));
+            }
 
-                        break;
+            System.out.println("¡Empleado creado con éxito!");
+            System.out.print(" 1. Regresar : ");
+            opcion = Integer.parseInt(input.nextLine());
 
-                    case 2:
-                        System.out.print("Nombre: ");
-                        String nombreTecnico = input.nextLine();
-                        System.out.print("Cedula: ");
-                        String cedulaTecnico = input.nextLine();
-                        System.out.print("Sueldo: ");
-                        double sueldoTecnico = input.nextDouble();
-                        input.nextLine();
-                        System.out.print("Numero de Contacto: ");
-                        String  numeroContactoTecnico = input.nextLine();
-                        System.out.print("Correo: ");
-                        String correoTecnico = input.nextLine();
-                        System.out.print("Años de experiencia: ");
-                        int anosExperiencia = input.nextInt();
-                        input.nextLine();
-                        System.out.print("Servicios Realizados: ");
-                        int serviciosRealizados = input.nextInt();
-                        input.nextLine();
-
-                        new Tecnico(nombreTecnico, cedulaTecnico, sueldoTecnico, numeroContactoTecnico, correoTecnico, anosExperiencia, serviciosRealizados);
-
-                        System.out.println("¡Tecnico creado con éxito!");
-
-                        break;
-
-                    case 3: break;
-                }
-
-                if (empleadoARegistrar == 1 || empleadoARegistrar == 2) {
-                    break;
-                }
-
-            } while (empleadoARegistrar != 3);
-
-
-            System.out.print("¿Desea añadir otro Empleado? [si/no] : ");
-            opcion = input.nextLine();
-
-        } while(opcion.equals("si"));
+        } while(opcion != 1);
 
     }
+
 
 }

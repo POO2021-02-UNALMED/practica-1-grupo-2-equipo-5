@@ -23,18 +23,13 @@ public class EliminaCliente {
         }
 
         System.out.print("Elige un cliente a eliminar: ");
-        int eliminaCliente = input.nextInt();
-        input.nextLine();
+        int cliente = Integer.parseInt(input.nextLine());
 
-        String eliminaOtroCliente;
+        Cliente.eliminarCliente(Cliente.getClientes().get(cliente-1));
 
-        do {
-            Cliente.getClientes().remove(eliminaCliente-1);
-
-            System.out.print("¡Cliente eliminado con éxito!, ¿Desea eliminar otro cliente? [si/no] : ");
-            eliminaOtroCliente = input.nextLine();
-
-        } while(eliminaOtroCliente.equals("si"));
+        System.out.println("¡Cliente eliminado con éxito!");
+        System.out.print(" 1. Regresar : ");
+        int opcion = Integer.parseInt(input.nextLine());
 
     }
 

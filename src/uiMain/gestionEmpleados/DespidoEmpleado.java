@@ -23,18 +23,13 @@ public class DespidoEmpleado {
         }
 
         System.out.print("Elige un empleado a eliminar: ");
-        int eliminaEmpleado = input.nextInt();
-        input.nextLine();
+        int empleado = Integer.parseInt(input.nextLine());
 
-        String eliminaOtroEmpleado;
+        Empleado.eliminarEmpleado(Empleado.getEmpleados().get(empleado-1));
 
-        do {
-            Empleado.getEmpleados().remove(eliminaEmpleado-1);
-
-            System.out.print("¡Empleado despedido con éxito!, ¿Desea despedir otro empleado? [si/no] : ");
-            eliminaOtroEmpleado = input.nextLine();
-
-        } while(eliminaOtroEmpleado.equals("si"));
+        System.out.println("¡Empleado despedido con éxito!");
+        System.out.print(" 1. Regresar : ");
+        int opcion = Integer.parseInt(input.nextLine());
 
     }
 }

@@ -1,13 +1,12 @@
 package uiMain;
 
-import gestionAplicacion.compras.Cliente;
-import gestionAplicacion.empleados.Cajero;
-import gestionAplicacion.empleados.Empleado;
-import gestionAplicacion.empleados.Tecnico;
 import uiMain.gestionClientes.GestionClientes;
+import uiMain.gestionCompras.GestionCompras;
 import uiMain.gestionEmpleados.GestionEmpleados;
 import baseDatos.Serializador;
 import baseDatos.Deserializador;
+import uiMain.gestionProductos.GestionProductos;
+import uiMain.gestionServicios.GestionServicios;
 
 import java.util.Scanner;
 
@@ -18,10 +17,10 @@ public class mainUser {
         Deserializador.deserializar();
 
         Scanner input = new Scanner(System.in);
+
         int opcion;
 
         do {
-            System.out.println(Cliente.getClientes().get(0));
             System.out.println("Bienvenido al sistema de PJ Tech");
             System.out.println("¿Que deseas hacer?");
             System.out.println(" 1. Gestionar Empleados");
@@ -29,8 +28,8 @@ public class mainUser {
             System.out.println(" 3. Gestionar Servicios");
             System.out.println(" 4. Gestionar Compras");
             System.out.println(" 5. Gestionar Clientes");
-            // Agregar opcion que permita obtener las utilidades de la tienda        Funcionalidad 2
-            System.out.println(" 6. Salir");
+            System.out.println(" 6. Gestionar Tienda");
+            System.out.println(" 7. Salir");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
 
@@ -40,10 +39,11 @@ public class mainUser {
                 case 3: GestionServicios.GestionarServicios() ; break;
                 case 4: GestionCompras.GestionarCompra() ; break;
                 case 5: GestionClientes.GestionarCliente(); break;
-                case 6: salirDelSistema(); break;
+                case 6: ; break;
+                case 7: salirDelSistema(); break;
             }
 
-        } while (opcion != 6);
+        } while (opcion != 7);
     }
 
     public static void salirDelSistema() {
