@@ -27,7 +27,7 @@ public class Producto implements Serializable {
     private String nombre;
     // Implementacion caso de enumeración
     protected enum tipo_producto {COMPUTADORES_PERSONALES, PERIFERICOS, CONSOLAS_DE_VIDEOJUEGOS,
-                                ACCESORIOS, COMBOS, COMPONENTES, DRONES};                       // Implementacion caso de enumeración
+                                ACCESORIOS, COMBOS, COMPONENTES, DRONES};
     tipo_producto tipo;
 
     private double precioCompra;
