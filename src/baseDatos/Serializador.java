@@ -5,6 +5,9 @@ import gestionAplicacion.compras.Compra;
 import gestionAplicacion.compras.CompraProductos;
 import gestionAplicacion.empleados.Empleado;
 import gestionAplicacion.productos.Producto;
+import gestionAplicacion.productos.ProductoVendido;
+import gestionAplicacion.servicios.Servicio;
+import gestionAplicacion.servicios.TipoServicio;
 
 import java.io.*;
 
@@ -87,6 +90,66 @@ public class Serializador {
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
             out.writeObject(Producto.getInventario());
+            out.close();
+            fileOut.close();
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try{
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\producto.txt");
+
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(Producto.getProductos());
+            out.close();
+            fileOut.close();
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try{
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\productoVendido.txt");
+
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(ProductoVendido.getProductosVendidos());
+            out.close();
+            fileOut.close();
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try{
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\servicio.txt");
+
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(Servicio.getServicios());
+            out.close();
+            fileOut.close();
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try{
+            fileOut = new FileOutputStream("src\\baseDatos\\temp\\tipoServicio.txt");
+
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(TipoServicio.getTiposDeServicio());
             out.close();
             fileOut.close();
 
