@@ -31,7 +31,6 @@ public class ProductoVendido implements Serializable, Devolucion {
     public ProductoVendido(double precioVenta, String descripcion ) {
         this.precioVenta = precioVenta;
         this.descripcion = descripcion;
-        ProductoVendido.productosVendidos.add(this);
     }
 
     // Se establecen los métodos Getters & Setters

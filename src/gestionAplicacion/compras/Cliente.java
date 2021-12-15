@@ -36,6 +36,7 @@ public class Cliente implements Serializable {
         this.direccion = direccion;
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
+        clientes.add(this);
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los clientes

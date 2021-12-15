@@ -29,7 +29,6 @@ public class Compra implements Serializable {
         this.descripcion = descripcion;
         this.direccion = direccion;
         this.cliente = cliente;
-
     }
 
     // Se agregan lo métodos Getters & Setters

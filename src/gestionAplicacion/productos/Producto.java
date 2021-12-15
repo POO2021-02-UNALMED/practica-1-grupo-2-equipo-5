@@ -42,8 +42,6 @@ public class Producto implements Serializable {
         this.nombre = nombre;
         this.tipo = tipo;
         this.precioCompra = precioCompra;
-        Producto.productos.add(this);
-        Producto.inventario.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -117,6 +115,12 @@ public class Producto implements Serializable {
     // metodo para agregar productos al inventario
     public static String agregarProductoAInventario(Producto producto){
         Producto.inventario.add(producto);
+        return "Se agrego el producto al inventario correctamente";
+    }
+
+    // metodo para agregar productos
+    public static String agregarProducto(Producto producto){
+        Producto.productos.add(producto);
         return "Se agrego el producto al inventario correctamente";
     }
 
