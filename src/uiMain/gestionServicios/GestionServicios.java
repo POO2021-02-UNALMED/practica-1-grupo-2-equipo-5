@@ -16,16 +16,15 @@ public class GestionServicios {
             System.out.println("¿Que desea hacer?");
             System.out.println(" 1. Ver Servicios");
             System.out.println(" 2. Crear Servicio");
-            System.out.println(" 3. Eliminar Servicio");
-            System.out.println(" 4. Editar Servicio");
-            System.out.println(" 5. Regresar");
+            System.out.println(" 3. Editar Servicio");
+            System.out.println(" 4. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
 
             switch (opcion) {
                 case 1:  VistaServicio.mostrarServio();
-                case 2:  RegistroServicio.regidtarServicios();
-                case 3: EditaServicio.menuEditarSercios();
+                case 2:  RegistroServicio.registraServicio();
+                case 3: EditaServicio.menuEditarSercio();
                 case 4: break;
             }
 
