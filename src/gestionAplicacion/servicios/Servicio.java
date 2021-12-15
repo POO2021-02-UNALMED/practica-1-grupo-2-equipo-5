@@ -25,12 +25,17 @@ public class Servicio implements Serializable {
     private CompraServicios compraServicios;
     private int codigo;
 
-    // Se cre el método constructor
+    // Se crea el método constructor
     public Servicio(double precio, String descripcion, TipoServicio tipoServicio, CompraServicios compraServicios, int codigo) {
-        this.precio = precio;
-        this.descripcion = descripcion;
+        this(precio, descripcion, codigo);
         this.tipoServicio = tipoServicio;
         this.compraServicios = compraServicios;
+    }
+
+    // Sobrecarga de constructores
+    public Servicio(double precio, String descripcion,int codigo) {
+        this.precio = precio;
+        this.descripcion = descripcion;
         this.codigo = codigo;
         Servicio.servicios.add(this);
     }
