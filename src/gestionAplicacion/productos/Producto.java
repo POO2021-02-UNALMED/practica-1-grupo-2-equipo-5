@@ -26,7 +26,7 @@ public class Producto implements Serializable {
     private int codigo;
     private String nombre;
     // Implementacion caso de enumeración
-    protected enum tipo_producto {COMPUTADORES_PERSONALES, PERIFERICOS, CONSOLAS_DE_VIDEOJUEGOS,
+    public static enum tipo_producto {COMPUTADORES_PERSONALES, PERIFERICOS, CONSOLAS_DE_VIDEOJUEGOS,
                                 ACCESORIOS, COMBOS, COMPONENTES, DRONES};
     tipo_producto tipo;
 

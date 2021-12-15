@@ -38,6 +38,20 @@ public class ProductoVendido implements Serializable, Devolucion {
     public static ArrayList<ProductoVendido> getProductosVendidos() {
         return productosVendidos;
     }
+    public static String verProductos() {
+
+        String resultado = "";
+
+        for (ProductoVendido producto : productosVendidos) {
+
+
+            // Se resuelve el método to string de la subclase más específica
+            resultado += "\n" + producto.toString();
+
+
+        }
+        return resultado;
+    }
 
     public static void setProductosVendidos(ArrayList<ProductoVendido> productosVendidos) {
         ProductoVendido.productosVendidos = productosVendidos;
