@@ -1,5 +1,10 @@
 package uiMain.gestionServicios;
 
+import uiMain.gestionProductos.EditaProducto;
+import uiMain.gestionProductos.EliminaProducto;
+import uiMain.gestionProductos.RegistroProducto;
+import uiMain.gestionProductos.VistaProductos;
+
 import java.util.Scanner;
 
 public class GestionServicios {
@@ -18,11 +23,10 @@ public class GestionServicios {
             opcion = input.nextInt();
 
             switch (opcion) {
-                case 1: ; break;
-                case 2: ; break;
-                case 3: ; break;
-                case 4: ; break;
-                case 5: break;
+                case 1:  VistaServicio.mostrarServio();
+                case 2:  RegistroServicio.regidtarServicios();
+                case 3: EditaServicio.menuEditarSercios();
+                case 4: break;
             }
 
         } while (opcion != 5);
