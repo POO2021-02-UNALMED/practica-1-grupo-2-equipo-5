@@ -14,9 +14,7 @@ public class EditaEmpleado {
 
         System.out.println("Empleados: ");
 
-        for (int i = 0; i < Empleado.getEmpleados().size(); i++) {
-            System.out.println((i+1) + " " + Empleado.getEmpleados().get(i));
-        }
+        System.out.println(Empleado.verEmpleados());
 
         System.out.print("Elige un Empleado a editar: ");
         int empleadoAEditar = input.nextInt();

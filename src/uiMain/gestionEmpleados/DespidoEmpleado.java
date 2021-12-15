@@ -18,9 +18,7 @@ public class DespidoEmpleado {
 
         System.out.println("Empleados: ");
 
-        for (int i = 0; i < Empleado.getEmpleados().size(); i++) {
-            System.out.println((i+1) + " " + Empleado.getEmpleados().get(i));
-        }
+        System.out.print(Empleado.verEmpleados());
 
         System.out.print("Elige un empleado a eliminar: ");
         int empleado = Integer.parseInt(input.nextLine());
