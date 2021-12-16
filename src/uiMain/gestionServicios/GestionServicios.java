@@ -22,8 +22,8 @@ public class GestionServicios {
             opcion = input.nextInt();
 
             switch (opcion) {
-                case 1:  VistaServicio.mostrarServio();
-                case 2:  RegistroServicio.registraServicio();
+                case 1: VistaServicio.mostrarServio(); break;
+                case 2: RegistroServicio.registraServicio();
                 case 3: EditaServicio.menuEditarSercio();
                 case 4: break;
             }
