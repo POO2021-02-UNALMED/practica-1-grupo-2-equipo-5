@@ -25,10 +25,15 @@ public class Compra implements Serializable {
 
     //Constructor
     public Compra(int codigo, String descripcion, String direccion, Cliente cliente) {
+        this(codigo, descripcion, direccion);
+        this.cliente = cliente;
+    }
+
+    public Compra(int codigo, String descripcion, String direccion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.direccion = direccion;
-        this.cliente = cliente;
+        compras.add(this);
     }
 
     // Se agregan lo métodos Getters & Setters
@@ -138,10 +143,6 @@ public class Compra implements Serializable {
         El método agregarCompra() recibe por parámetro una compra para añadir a la lista de compras
     */
 
-    public static void agregarCompra(Compra compra) {
-        compras.add(compra);
-    }
-
     public static boolean eliminarCompra(int codigo) {
 
         for (Compra compra : compras) {
@@ -167,5 +168,13 @@ public class Compra implements Serializable {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Compra{" +
+                "cliente=" + cliente.getNombre() +
+                ", codigo=" + codigo +
+                ", descripcion='" + descripcion + '\'' +
+                ", direccion='" + direccion + '\'' +
+                '}';
+    }
 }

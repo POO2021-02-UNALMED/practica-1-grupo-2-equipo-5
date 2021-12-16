@@ -30,6 +30,7 @@ public class Servicio implements Serializable {
         this(precio, descripcion, codigo);
         this.tipoServicio = tipoServicio;
         this.compraServicios = compraServicios;
+        servicios.add(this);
     }
 
     // Sobrecarga de constructores
@@ -128,7 +129,7 @@ public class Servicio implements Serializable {
                 "Precio=" + precio +
                 ", Descripcion='" + descripcion + '\'' +
                 ", TipoServicio=" + tipoServicio +
-                ", Compra de Servicios=" + compraServicios +
+                ", Compra de Servicios=" + compraServicios.getCodigo() +
                 '}';
     }
 }

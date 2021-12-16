@@ -38,6 +38,9 @@ public class RegistroProducto {
         }
 
         Producto producto = new Producto(codigo, nombre, tipo, precio);
+        Producto.agregarProductoAInventario(producto);
+        Producto.agregarProducto(producto);
+
 
     }
 
