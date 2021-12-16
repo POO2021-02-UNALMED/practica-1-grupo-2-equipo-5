@@ -13,8 +13,7 @@ public class GestionEmpleados {
             System.out.println(" 2. Crear Empleado");
             System.out.println(" 3. Despedir Empleado");
             System.out.println(" 4. Editar Empleado");
-            System.out.println(" 5. Obtener comisiones");
-            System.out.println(" 6. Regresar");
+            System.out.println(" 5. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
 
@@ -23,11 +22,10 @@ public class GestionEmpleados {
                 case 2: RegistroEmpleado.registrarEmpleado(); break;
                 case 3: DespidoEmpleado.despedirEmpleado(); break;
                 case 4: EditaEmpleado.editarEmpleado(); break;
-                case 5: ; break;
-                case 6: break;
+                case 5: break;
             }
 
-        } while (opcion != 6);
+        } while (opcion != 5);
     }
 
 }

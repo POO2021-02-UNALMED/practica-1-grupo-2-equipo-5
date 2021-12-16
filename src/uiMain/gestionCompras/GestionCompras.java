@@ -15,8 +15,7 @@ public class GestionCompras {
             System.out.println(" 2. Crear Compra");
             System.out.println(" 3. Eliminar Compra");
             System.out.println(" 4. Editar Compra");
-            System.out.println(" 5. Devolucion de Compra");   // Funcionalidad interesante 3
-            System.out.println(" 6. Regresar");
+            System.out.println(" 5. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
 
@@ -25,11 +24,10 @@ public class GestionCompras {
                 case 2: RegistroCompra.registrarCompra(); break;
                 case 3: EliminaCompra.mostrarMenuEliminarCompra(); break;
                 case 4: EditaCompra.menuEditarCompra(); break;
-                case 5: ; break;
-                case 6: break;
+                case 5: break;
             }
 
-        } while (opcion != 6);
+        } while (opcion != 5);
 
     }
 

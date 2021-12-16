@@ -19,19 +19,24 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
 
     // Atributos (Encapsulamiento con atributos de visibilidad private)
     private String fechaCompra;
-    private float descuento;
+    private double descuento;
 
     //Constructor
     public CompraProductos(int codigo, String descripcion, String direccion, Cliente cliente, String fechaCompra) {
         super(codigo, descripcion, direccion, cliente);
         this.fechaCompra = fechaCompra;
-        this.descuento = 0;
     }
 
     //Sobrecarga de constructores
-    public CompraProductos(int codigo, String descripcion, String direccion,Cliente cliente, String fechaCompra, float descuento) {
-        this(codigo, descripcion, direccion, cliente,fechaCompra);
+    public CompraProductos(int codigo, String descripcion, String direccion,Cliente cliente, String fechaCompra, double descuento) {
+        this(codigo, descripcion, direccion, fechaCompra, descuento);
         // Manejo del this() para desambiguar
+
+    }
+
+    public CompraProductos(int codigo, String descripcion, String direccion, String fechaCompra, double descuento) {
+        super(codigo, descripcion, direccion);
+        this.fechaCompra = fechaCompra;
         this.descuento = descuento;
     }
 
@@ -52,11 +57,11 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
         this.fechaCompra = fechaCompra;
     }
 
-    public float getDescuento() {
+    public double getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(float descuento) {
+    public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
 

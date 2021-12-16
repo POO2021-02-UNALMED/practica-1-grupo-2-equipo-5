@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class VistaServicio {
     public static void mostrarServio(){
-       System.out.println(Servicio.getServicios());
+       for (Servicio servicio : Servicio.getServicios()) {
+           System.out.println(servicio);
+       }
     }
 }
