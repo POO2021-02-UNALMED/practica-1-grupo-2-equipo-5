@@ -16,14 +16,15 @@ public class RegistroProducto {
         System.out.print("Precio: ");
         double precio  = input.nextDouble();
 
-        System.out.print("Ingrese el tipo del producto, marcando el número asociado: ");
-        System.out.print("1: COMPUTADORES_PERSONALES");
-        System.out.print("2: PERIFERICOS");
-        System.out.print("3: CONSOLAS_DE_VIDEOJUEGOS");
-        System.out.print("4: ACCESORIOS");
-        System.out.print("5: COMBOS");
-        System.out.print("6: COMPONENTES");
-        System.out.print("7: DRONES");
+        System.out.println("Ingrese el tipo del producto, marcando el número asociado: ");
+        System.out.println("1: COMPUTADORES_PERSONALES");
+        System.out.println("2: PERIFERICOS");
+        System.out.println("3: CONSOLAS_DE_VIDEOJUEGOS");
+        System.out.println("4: ACCESORIOS");
+        System.out.println("5: COMBOS");
+        System.out.println("6: COMPONENTES");
+        System.out.println("7: DRONES");
+        System.out.print("Indique su eleccion : ");
         int id_tipo = input.nextInt();
         Producto.tipo_producto tipo = null;
         switch (id_tipo){
