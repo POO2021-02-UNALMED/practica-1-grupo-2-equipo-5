@@ -26,11 +26,11 @@ public class ComisionFuncionalidad {
 
         //Imprime todos los empelados de forma desc y calcula la comisión total y se muestra en pantalla.
         for(Empleado empleado: empleados){
-            comisionTotal += empleado.getComision();
-
+            comisionTotal += empleado.calcularComision();
+            System.out.println();
             System.out.println("Nombre: " + empleado.getNombre());
             System.out.println("CC: " + empleado.getCedula());
-            System.out.println("Comision: " + empleado.getComision());
+            System.out.println("Comision: " + empleado.calcularComision());
             System.out.println("===================");
         }
         System.out.println("Total de comisión a pagar: " + comisionTotal);
