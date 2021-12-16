@@ -58,7 +58,7 @@ public class GestionarInvetario {
         System.out.println("Aqui Todos los tipos vendidos.");
         //Se muestra todos los tipos  de producto que se encontró.
         for (Producto.tipo_producto tipo : totalProductos.keySet()) {
-            System.out.println("Tipo de producto: "+ tipo + "tiene: " + totalProductos.get(tipo));
+            System.out.println("Tipo de producto: "+ tipo + " tiene: " + totalProductos.get(tipo));
         }
     }
     public static void obtenerServicios(){
@@ -101,6 +101,7 @@ public class GestionarInvetario {
         }
 
         System.out.println("El servicio que más solicitado es: ");
-        System.out.println(servicios);
+        System.out.println(tipo_mayor);
+        System.out.println("Con "+ cantidad_mayor);
     }
 }
