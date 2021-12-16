@@ -76,4 +76,5 @@ public class TipoServicio implements Serializable {
                 ", tecnico=" + tecnico +
                 '}';
     }
+
 }

@@ -3,6 +3,7 @@ package gestionAplicacion.compras;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import gestionAplicacion.empleados.Cajero;
 import gestionAplicacion.productos.Producto;
 import gestionAplicacion.productos.ProductoVendido;
 
@@ -100,11 +101,13 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
     // PUEDE SER FUNCIONALIDAD INTERESANTE
     // Se agraga el método agregarProductoACompra para ingresar a la compra de un cliente
     // un producto que se encuentre en el inventario.
-    public String agregarProductoACompra(Producto producto) {
+    public String agregarProductoACompra(Producto producto, Cajero cajero) {
 
         Producto.eliminarProductoInvetario(producto.getCodigo());
         ProductoVendido vendido = new ProductoVendido(producto.getPrecioCompra()*ProductoVendido.PORCENTAJE_GANANCIA,
                                                       "Sin descripcion");
+
+        cajero.agregarAProductosVendidos(vendido);
         vendido.setProducto(producto);
         vendido.setCompraProductos(this);
         productos.add(vendido);

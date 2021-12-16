@@ -177,4 +177,5 @@ public class Compra implements Serializable {
                 ", direccion='" + direccion + '\'' +
                 '}';
     }
+
 }

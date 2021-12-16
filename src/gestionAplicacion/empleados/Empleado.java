@@ -3,7 +3,7 @@ package gestionAplicacion.empleados;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Empleado implements Serializable {
+public abstract class Empleado implements Serializable, Comparable<Empleado> {
 
     /*
         La finalidad de esta clase consiste en guardar los datos de los empleados
@@ -36,6 +36,9 @@ public abstract class Empleado implements Serializable {
         empleados.add(this);
     }
 
+    public int compareTo(Empleado empleado){
+        return (int) (this.comision - empleado.comision);
+    }
     // Se agrega el método toString() para mostrar todos los datos de los empleados
     @Override
     public abstract String toString();
@@ -136,6 +139,23 @@ public abstract class Empleado implements Serializable {
 
     public static void eliminarEmpleado(Empleado empleado) {
         empleados.remove(empleado);
+    }
+
+    //Método para obtener los egresos por sueldos
+    //El sueldo que en verdad se le va a pagar al usario.
+    public double getTotalSueldo(){
+        return this.comision + this.sueldo;
+    }
+
+    //Método para obtener los egresos totales por pago de nómina
+    public static double obtenerEgresosNomina() {
+        double egresosPorPagoNomina = 0;
+
+        for (Empleado empleado : empleados) {
+            egresosPorPagoNomina += empleado.getTotalSueldo();
+        }
+
+        return egresosPorPagoNomina;
     }
 
 

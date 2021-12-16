@@ -113,4 +113,16 @@ public class ProductoVendido implements Serializable, Devolucion {
                 ", compraProductos=" + compraProductos.getCodigo() +
                 '}';
     }
+
+    //Metodo para calcular los ingresos por ventas de productos
+    public static double obtenerIngresosProductosVendidos() {
+        double ingresos = 0;
+
+        for (ProductoVendido productoVendido : productosVendidos) {
+            ingresos += productoVendido.getPrecioVenta();
+        }
+
+        return ingresos;
+    }
+
 }
