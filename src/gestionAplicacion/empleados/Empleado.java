@@ -1,9 +1,5 @@
 package gestionAplicacion.empleados;
 
-import gestionAplicacion.compras.Compra;
-import gestionAplicacion.compras.CompraProductos;
-import gestionAplicacion.compras.CompraServicios;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -132,14 +128,6 @@ public abstract class Empleado implements Serializable {
         }
 
         return resultado;
-    }
-
-    /*
-        El método agregarEmpleado() recibe por parámetro un empleado para añadir a la lista de empleados
-    */
-
-    public static void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
     }
 
     /*

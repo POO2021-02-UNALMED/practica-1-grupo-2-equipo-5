@@ -10,6 +10,7 @@ import gestionAplicacion.empleados.Tecnico;
 import gestionAplicacion.productos.Producto;
 import gestionAplicacion.servicios.Servicio;
 import gestionAplicacion.servicios.TipoServicio;
+import uiMain.funcionalidades.Funcionalidades;
 import uiMain.gestionClientes.GestionClientes;
 import uiMain.gestionCompras.GestionCompras;
 import uiMain.gestionEmpleados.GestionEmpleados;
@@ -107,7 +108,7 @@ public class mainUser {
                 case 3: GestionServicios.GestionarServicios() ; break;
                 case 4: GestionCompras.GestionarCompra() ; break;
                 case 5: GestionClientes.GestionarCliente(); break;
-                case 6: ; break;
+                case 6: Funcionalidades.gestionFuncionalidades(); break;
                 case 7: salirDelSistema(); break;
             }
 

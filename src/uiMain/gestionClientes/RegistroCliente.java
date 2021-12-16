@@ -32,7 +32,7 @@ public class RegistroCliente {
             System.out.print("Fecha de Nacimiento: ");
             String fechaNacimiento = input.nextLine();
 
-            Cliente.agregarCliente(new Cliente(cedula, nombre, direccion, telefono, fechaNacimiento));
+            new Cliente(cedula, nombre, direccion, telefono, fechaNacimiento);
 
             System.out.println("¡Cliente creado con éxito!");
             System.out.print(" 1. Regresar : ");

@@ -1,7 +1,6 @@
 package uiMain.gestionCompras;
 
 import gestionAplicacion.compras.Cliente;
-import gestionAplicacion.compras.Compra;
 import gestionAplicacion.compras.CompraProductos;
 import gestionAplicacion.compras.CompraServicios;
 
@@ -43,7 +42,7 @@ public class RegistroCompra {
                 System.out.print("Descuento: ");
                 float descuento = Float.parseFloat(input.nextLine());
 
-                Compra.agregarCompra(new CompraProductos(codigo, descripcion, direccion, cliente, fechaCompra, descuento));
+                new CompraProductos(codigo, descripcion, direccion, cliente, fechaCompra, descuento);
 
             }
 
@@ -65,7 +64,7 @@ public class RegistroCompra {
                 System.out.print("Tiempo de culminacion: ");
                 String tiempoCulminacion = input.nextLine();
 
-                Compra.agregarCompra(new CompraServicios(codigo, descripcion, direccion, cliente, tiempoCulminacion));
+                new CompraServicios(codigo, descripcion, direccion, cliente, tiempoCulminacion);
 
             }
 

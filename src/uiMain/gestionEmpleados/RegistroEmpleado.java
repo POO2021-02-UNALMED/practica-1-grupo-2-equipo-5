@@ -44,7 +44,7 @@ public class RegistroEmpleado {
                 double cantidadEnVentas = input.nextDouble();
                 input.nextLine();
 
-                Empleado.agregarEmpleado(new Cajero(nombre, cedula, sueldo, numeroContacto, correo));
+                new Cajero(nombre, cedula, sueldo, numeroContacto, correo);
             }
 
             else  if (eleccion == 2) {
@@ -63,7 +63,7 @@ public class RegistroEmpleado {
                 System.out.print("Servicios Realizados: ");
                 int serviciosRealizados = Integer.parseInt(input.nextLine());
 
-                Empleado.agregarEmpleado(new Tecnico(nombre, cedula, sueldo, numeroContacto, correo, anosExperiencia, serviciosRealizados));
+                new Tecnico(nombre, cedula, sueldo, numeroContacto, correo, anosExperiencia, serviciosRealizados);
             }
 
             System.out.println("¡Empleado creado con éxito!");

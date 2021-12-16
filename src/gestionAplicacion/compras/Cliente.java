@@ -174,14 +174,6 @@ public class Cliente implements Serializable {
     }
 
     /*
-        El método agregarCliente() recibe por parámetro un empleado para añadir a la lista de clientes
-    */
-
-    public static void agregarCliente(Cliente cliente) {
-        clientes.add(cliente);
-    }
-
-    /*
         El método eliminarCliente() recibe por parámetro un empleado a eliminar de la lista de clientes
     */
 

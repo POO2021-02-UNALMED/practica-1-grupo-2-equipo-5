@@ -143,10 +143,6 @@ public class Compra implements Serializable {
         El método agregarCompra() recibe por parámetro una compra para añadir a la lista de compras
     */
 
-    public static void agregarCompra(Compra compra) {
-        compras.add(compra);
-    }
-
     public static boolean eliminarCompra(int codigo) {
 
         for (Compra compra : compras) {
