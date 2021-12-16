@@ -3,18 +3,29 @@ package uiMain.funcionalidades;
 import gestionAplicacion.compras.Cliente;
 import gestionAplicacion.compras.Compra;
 import gestionAplicacion.compras.CompraProductos;
+import gestionAplicacion.productos.Producto;
 import gestionAplicacion.productos.ProductoVendido;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DevolucionDeCompra {
 
     public static void hacerDevolucion() {
+        ArrayList<Producto> productos = Producto.getInventario();
+
+        for (Producto producto: productos) {
+            System.out.println(producto);
+        }
 
         Scanner input = new Scanner(System.in);
 
         int opcion;
 
+        if (Cliente.getClientes().isEmpty()) {
+            System.out.println("No hay clientes");
+            return;
+        }
         // Se recorren los clientes para saber cual hará la devolución
         System.out.println("¿Que cliente desea hacer la devolución");
         for (Cliente cliente : Cliente.getClientes()) {
@@ -31,6 +42,10 @@ public class DevolucionDeCompra {
 
             if (opcion == 1) {
                 // Si ese es el cliente, se procede a seleccionar la compra
+                if (cliente.getCompras().isEmpty()) {
+                    System.out.println("No hay compras");
+                    return;
+                }
                 System.out.println("¿Que compra desea devolver");
                 for (Compra compra: cliente.getCompras()) {
 
@@ -53,10 +68,17 @@ public class DevolucionDeCompra {
                             if (opcion == 1) {
                                 // Se devuelve la compra completa
                                 ((CompraProductos) compra).devolver();
+                                for (Producto producto1: Producto.getInventario()) {
+                                    System.out.println(producto1);
+                                }
                                 System.out.println("Compra devuelta");
                                 return;
                             } else {
                                 // Se seleciona el producto a devolver
+                                if (((CompraProductos) compra).getProductos().isEmpty()) {
+                                    System.out.println("No hay productos");
+                                    return;
+                                }
                                 System.out.println("¿Que producto desea devolver?");
                                 for (ProductoVendido producto : ((CompraProductos) compra).getProductos()) {
                                     System.out.println("=================================");
@@ -69,6 +91,9 @@ public class DevolucionDeCompra {
                                     if (opcion == 1) {
                                         producto.devolver();
                                         System.out.println("Producto devuelto");
+                                        for (Producto producto1: Producto.getInventario()) {
+                                            System.out.println(producto1);
+                                        }
                                         return;
                                     }
                                 }
@@ -76,7 +101,17 @@ public class DevolucionDeCompra {
                         }
                     }
                 }
+                System.out.println("No hay compras de productos");
+                for (Producto producto1: Producto.getInventario()) {
+                    System.out.println(producto1);
+                }
+                return;
             }
         }
+
+        for (Producto producto: Producto.getInventario()) {
+            System.out.println(producto);
+        }
+
     }
 }

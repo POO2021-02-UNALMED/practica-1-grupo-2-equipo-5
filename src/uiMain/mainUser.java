@@ -28,7 +28,7 @@ public class mainUser {
         Deserializador.deserializar();
 
         
-        // Empleados de la tienda
+/*        // Empleados de la tienda
         Empleado cajero1 = new Cajero("Anselmo", "9584345", 1000000, "3138459495", "angom@pjtech.co");
         Empleado cajero2 = new Cajero("Lee", "123344", 1000000, "3138345495", "lee@pjtech.co");
         Empleado cajero3 = new Cajero("Jhon Jairo", "45345345", 1000000, "343459495", "jjvv@pjtech.co");
@@ -82,7 +82,7 @@ public class mainUser {
         cliente2.agregarCompra((CompraServicios) compra4);
         Servicio servicio3 = new Servicio(25000, "SE isntalaron todos los programas", tipoServicio3,(CompraServicios) compra4, 9805);
         ((CompraServicios) compra4).agregarServicio(servicio3);
-        tipoServicio3.agregarServicio(servicio3);
+        tipoServicio3.agregarServicio(servicio3);*/
 
 
         Scanner input = new Scanner(System.in);
