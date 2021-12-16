@@ -42,6 +42,8 @@ public class Producto implements Serializable {
         this.nombre = nombre;
         this.tipo = tipo;
         this.precioCompra = precioCompra;
+        productos.add(this);
+        inventario.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -129,7 +131,7 @@ public class Producto implements Serializable {
 
         String resultado = "";
 
-        for (Producto producto : productos) {
+        for (Producto producto : inventario) {
 
 
             // Se resuelve el método to string de la subclase más específica
@@ -143,9 +145,9 @@ public class Producto implements Serializable {
 
     public static boolean eliminarProducto(int codigo) {
 
-        for (Producto producto : productos) {
+        for (Producto producto : inventario) {
             if (producto.codigo == codigo) {
-                productos.remove(producto);
+                inventario.remove(producto);
                 return true;
             }
         }
@@ -167,7 +169,7 @@ public class Producto implements Serializable {
 
     public static Producto buscarProducto (int codigo) {
 
-        for (Producto producto : productos) {
+        for (Producto producto : inventario) {
             if (producto.codigo == codigo) {
 
                 return producto;
@@ -176,4 +178,13 @@ public class Producto implements Serializable {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
+                ", tipo=" + tipo +
+                ", precioCompra=" + precioCompra +
+                '}';
+    }
 }

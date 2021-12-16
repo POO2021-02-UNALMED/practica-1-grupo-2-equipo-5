@@ -44,7 +44,7 @@ public class RegistroEmpleado {
                 double cantidadEnVentas = input.nextDouble();
                 input.nextLine();
 
-                Empleado.agregarEmpleado(new Cajero(nombre, cedula, sueldo, numeroContacto, correo, cantidadEnVentas));
+                Empleado.agregarEmpleado(new Cajero(nombre, cedula, sueldo, numeroContacto, correo));
             }
 
             else  if (eleccion == 2) {

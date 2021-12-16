@@ -31,6 +31,7 @@ public class ProductoVendido implements Serializable, Devolucion {
     public ProductoVendido(double precioVenta, String descripcion ) {
         this.precioVenta = precioVenta;
         this.descripcion = descripcion;
+        productosVendidos.add(this);
     }
 
     // Se establecen los métodos Getters & Setters
@@ -101,5 +102,15 @@ public class ProductoVendido implements Serializable, Devolucion {
         ProductoVendido.productosVendidos.remove(this);
 
         return "Se hizo la devolucion del producto correctamente";
+    }
+
+    @Override
+    public String toString() {
+        return "ProductoVendido{" +
+                "precioVenta=" + precioVenta +
+                ", descripcion='" + descripcion + '\'' +
+                ", producto=" + producto +
+                ", compraProductos=" + compraProductos.getCodigo() +
+                '}';
     }
 }
