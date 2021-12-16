@@ -18,10 +18,10 @@ public class GestionProductos {
             opcion = input.nextInt();
 
             switch (opcion) {
-                case 1: ; VistaProductos.mostrarProductos();
-                case 2: ; RegistroProducto.regidtarProducto();
-                case 3: ; EliminaProducto.mostarMenuEliminarProducto();
-                case 4: ; EditaProducto.menuEditarProducto();
+                case 1: ; VistaProductos.mostrarProductos(); break;
+                case 2: ; RegistroProducto.regidtarProducto(); break;
+                case 3: ; EliminaProducto.mostarMenuEliminarProducto(); break;
+                case 4: ; EditaProducto.menuEditarProducto(); break;
                 case 5: break;
             }
 
