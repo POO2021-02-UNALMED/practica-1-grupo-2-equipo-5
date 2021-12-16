@@ -23,8 +23,8 @@ public class Funcionalidades {
             input.nextLine();
 
             switch (opcion) {
-                case 1: ; break;
-                case 2: ; break;
+                case 1: ClientesValiosos.mostrarClientesValiosos(); break;
+                case 2: DevolucionDeCompra.hacerDevolucion(); break;
                 case 3: ComisionFuncionalidad.funcionalidad(); break;
                 case 4: InformeTienda.generarInformeTienda(); break;
                 case 5: GestionarInvetario.funcionalidad(); break;
@@ -33,5 +33,4 @@ public class Funcionalidades {
 
         } while (opcion != 6);
     }
-
 }
