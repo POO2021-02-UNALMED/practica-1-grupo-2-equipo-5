@@ -14,9 +14,9 @@ public class Funcionalidades {
             System.out.println("¿Que desea hacer?");
             System.out.println(" 1. Ver Clientes Valiosos"); //Funcionalidad valiosa #1
             System.out.println(" 2. Devolucion de Compra"); //Funcionalidad valiosa #2
-            System.out.println(" 3. Obtener comisiones de empleados"); //Funcionalidad valiosa #3
+            System.out.println(" 3. Obtener comisiones de empleados"); //Funcionalidad valiosa #3 // Fredy
             System.out.println(" 4. Generar informe tienda"); //Funcionalidad valiosa #4
-            System.out.println(" 5. Gestionar Inventario: "); //Funcionalidad valiosa #5
+            System.out.println(" 5. Gestionar Inventario: "); //Funcionalidad valiosa #5 // FREDY
             System.out.println(" 6. Regresar");
             System.out.print("Indique su eleccion : ");
             opcion = input.nextInt();
