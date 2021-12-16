@@ -13,9 +13,16 @@ package uiMain.funcionalidades;
     5. Cliente más valioso
 */
 
+import gestionAplicacion.compras.Cliente;
+import gestionAplicacion.empleados.Cajero;
+import gestionAplicacion.empleados.Empleado;
+import gestionAplicacion.empleados.Tecnico;
 import gestionAplicacion.productos.Producto;
 import gestionAplicacion.productos.ProductoVendido;
 import gestionAplicacion.servicios.Servicio;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class InformeTienda {
 
@@ -25,8 +32,9 @@ public class InformeTienda {
                 "Ingresos Totales : " + getIngresosTotales() + "\n" +
                 "Egresos Totales : " + getEgresosTotales() + "\n" +
                 "Utilidades : " + getUtilidades() + "\n" +
-                "Mayor vendedor (Cajero) : " + getMejoresEmpleados() + "\n" +
-                "Cliente Mas Valioso" + getMejorCliente();
+                "Mayor vendedor (Cajero) : " + getMejorCajero() + "\n" +
+                "Tecnico con mas Servicios : " + getMejorTecnico() + "\n" +
+                "Cliente Mas Valioso : " + getMejorCliente();
 
         System.out.println(informe);
 
@@ -47,21 +55,30 @@ public class InformeTienda {
         1. Compra de productos
         2. Pago de nomina a empleados
      */
+
     public static double getEgresosTotales() {
         double egresosCompraProductos = Producto.obtenerEgresosProductos();
+        double egresosPagoNomima = Empleado.obtenerEgresosNomina();
 
+        return egresosCompraProductos + egresosPagoNomima;
     }
 
     public static double getUtilidades() {
-        return getEgresosTotales() - getEgresosTotales();
+        return getIngresosTotales() - getEgresosTotales();
     }
 
-    public static String getMejoresEmpleados() {
-        
+    public static String getMejorCajero() {
+        return Cajero.mejorCajero();
+    }
+
+    public static String getMejorTecnico() {
+        return Tecnico.mejorTecnico();
     }
 
     public static String getMejorCliente() {
+        Collections.sort(Cliente.getClientes(), Collections.reverseOrder());
 
+        return Cliente.getClientes().get(0).getNombre();
     }
 
 }

@@ -5,7 +5,7 @@ import gestionAplicacion.productos.ProductoVendido;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cajero extends Empleado implements Serializable {
+public class Cajero extends Empleado implements Serializable{
 
     /*
         La finalidad de la clase consiste en guardar las datos de los Empleados
@@ -13,7 +13,7 @@ public class Cajero extends Empleado implements Serializable {
     */
 
     // Atributos
-    private double cantidadEnVentas;
+    private double cantidadEnVentas = 0;
 
     // Atributos de relaciones
     private ArrayList<ProductoVendido> productosVendidos = new ArrayList<ProductoVendido>();
@@ -73,6 +73,39 @@ public class Cajero extends Empleado implements Serializable {
 
     public void agregarAProductosVendidos(ProductoVendido vendido) {
         productosVendidos.add(vendido);
+    }
+
+    //Método para obtener la cantidad total de dinero que vendió un cajero
+    public void obtenerCantidadEnVentas() {
+        for (ProductoVendido productoVendido: productosVendidos) {
+            this.cantidadEnVentas += productoVendido.getPrecioVenta();
+        }
+    }
+
+    //Método para obtener el mejor cajero
+    public static String mejorCajero() {
+        String mejorCajero = "";
+
+        ArrayList<Cajero> cajeros = new ArrayList<Cajero>();
+
+        for (Empleado empleado : Empleado.getEmpleados()) {
+            if (empleado instanceof Cajero) {
+                 ((Cajero) empleado).obtenerCantidadEnVentas();
+                 cajeros.add(((Cajero) empleado));
+            }
+        }
+
+        Cajero cajeroConMasVentas = cajeros.get(0);
+        double mejorVenta = cajeros.get(0).cantidadEnVentas;
+        for (Cajero cajero : cajeros) {
+            if (cajero.cantidadEnVentas > mejorVenta) {
+                mejorVenta = cajero.cantidadEnVentas;
+                cajeroConMasVentas = cajero;
+            }
+        }
+
+        assert cajeroConMasVentas != null;
+        return cajeroConMasVentas.getNombre();
     }
 
 }

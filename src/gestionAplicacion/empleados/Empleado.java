@@ -147,4 +147,16 @@ public abstract class Empleado implements Serializable, Comparable<Empleado> {
         return this.comision + this.sueldo;
     }
 
+    //Método para obtener los egresos totales por pago de nómina
+    public static double obtenerEgresosNomina() {
+        double egresosPorPagoNomina = 0;
+
+        for (Empleado empleado : empleados) {
+            egresosPorPagoNomina += empleado.getTotalSueldo();
+        }
+
+        return egresosPorPagoNomina;
+    }
+
+
 }

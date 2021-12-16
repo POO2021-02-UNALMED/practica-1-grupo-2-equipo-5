@@ -1,10 +1,12 @@
 package gestionAplicacion.empleados;
 
+import gestionAplicacion.productos.ProductoVendido;
 import gestionAplicacion.servicios.Servicio;
 import gestionAplicacion.servicios.TipoServicio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Tecnico extends Empleado implements Serializable {
 
@@ -86,5 +88,31 @@ public class Tecnico extends Empleado implements Serializable {
         return comisionTotal;
     }
 
-    
+    //Método para obtener el mejor tecnico
+    public static String mejorTecnico() {
+        String mejorTecnico = "";
+
+        ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
+
+        for (Empleado empleado : Empleado.getEmpleados()) {
+            if (empleado instanceof Tecnico) {
+                ((Tecnico) empleado).getServiciosRealizados();
+                tecnicos.add(((Tecnico) empleado));
+            }
+        }
+
+        Tecnico tecnicoConMasServicios = tecnicos.get(0);
+        double serviciosHechos = tecnicos.get(0).serviciosRealizados;
+        for (Tecnico tecnico : tecnicos) {
+            if (tecnico.serviciosRealizados > serviciosHechos) {
+                serviciosHechos = tecnico.serviciosRealizados;
+                tecnicoConMasServicios = tecnico;
+            }
+        }
+
+        assert tecnicoConMasServicios != null;
+        return tecnicoConMasServicios.getNombre();
+    }
+
+
 }
