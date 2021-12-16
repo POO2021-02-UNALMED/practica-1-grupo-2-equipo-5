@@ -46,7 +46,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\compras.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
@@ -70,7 +70,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\empleados.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
@@ -94,7 +94,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\inventario.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
@@ -118,7 +118,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\producto.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
@@ -142,7 +142,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\productoVendido.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
@@ -166,7 +166,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\servicio.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
@@ -190,7 +190,7 @@ public class Deserializador {
             e.printStackTrace();
         }
         try {
-            fileIn = new FileInputStream("src\\baseDatos\\temp\\tipoServicio.txt");
+            fileIn = new FileInputStream("src\\baseDatos\\temp\\clientes.txt");
 
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
