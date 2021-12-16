@@ -1,5 +1,15 @@
 package uiMain;
 
+import gestionAplicacion.compras.Cliente;
+import gestionAplicacion.compras.Compra;
+import gestionAplicacion.compras.CompraProductos;
+import gestionAplicacion.compras.CompraServicios;
+import gestionAplicacion.empleados.Cajero;
+import gestionAplicacion.empleados.Empleado;
+import gestionAplicacion.empleados.Tecnico;
+import gestionAplicacion.productos.Producto;
+import gestionAplicacion.servicios.Servicio;
+import gestionAplicacion.servicios.TipoServicio;
 import uiMain.gestionClientes.GestionClientes;
 import uiMain.gestionCompras.GestionCompras;
 import uiMain.gestionEmpleados.GestionEmpleados;
@@ -15,6 +25,8 @@ public class mainUser {
     public static void main(String[] args) {
 
         Deserializador.deserializar();
+
+
 
         Scanner input = new Scanner(System.in);
 

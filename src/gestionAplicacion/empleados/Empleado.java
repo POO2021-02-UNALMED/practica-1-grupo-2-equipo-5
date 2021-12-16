@@ -37,6 +37,7 @@ public abstract class Empleado implements Serializable {
         this.sueldo = sueldo;
         this.numeroContacto = numeroContacto;
         this.correo = correo;
+        empleados.add(this);
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los empleados
