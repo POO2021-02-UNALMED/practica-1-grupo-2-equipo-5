@@ -100,6 +100,7 @@ public class GestionarInvetario {
             }
         }
 
+        //Imprimiemos el servicio que más solicitado es con su cantidad.
         System.out.println("El servicio que más solicitado es: ");
         System.out.println(tipo_mayor);
         System.out.println("Con "+ cantidad_mayor);
