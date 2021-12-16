@@ -17,7 +17,28 @@ public class Serializador {
         Este método es el encargado de serializar las listar que están en cada clase
     */
 
+    private static File rutaTemp = new File("src\\baseDatos\\temp\\");
+
     public static void serializar() {
+
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        File[] docs = rutaTemp.listFiles();
+        PrintWriter pw;
+
+        // aca se borra el contenido de los documentos antes de guardar
+        for(File f : docs) {
+            try{
+                pw = new PrintWriter(f);
+
+            }
+            catch(FileNotFoundException e){
+
+                e.printStackTrace();
+
+            }
+
+        }
 
         FileOutputStream fileOut;
         try{
