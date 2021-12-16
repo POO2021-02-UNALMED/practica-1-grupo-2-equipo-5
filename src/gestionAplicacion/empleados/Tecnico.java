@@ -88,7 +88,11 @@ public class Tecnico extends Empleado implements Serializable {
         return comisionTotal;
     }
 
-    //Método para obtener el mejor tecnico
+    /*
+        Método para obtener el mejor tecnico, se basa en recorrer la lista de tecnicos y encontrar los que más servicios
+        hayan realizado, se hace con la finalidad de implementar la funcionalidad de generar el informe de
+        la tienda, no recibe parámetros y retorna un String
+     */
     public static String mejorTecnico() {
         String mejorTecnico = "";
 

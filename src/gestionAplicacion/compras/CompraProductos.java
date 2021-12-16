@@ -98,7 +98,6 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
         return "La compra ha sido devuelta exitosamente";
     }
 
-    // PUEDE SER FUNCIONALIDAD INTERESANTE
     // Se agraga el método agregarProductoACompra para ingresar a la compra de un cliente
     // un producto que se encuentre en el inventario.
     public String agregarProductoACompra(Producto producto, Cajero cajero) {

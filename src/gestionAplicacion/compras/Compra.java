@@ -108,7 +108,6 @@ public class Compra implements Serializable {
         El método verComprasProductos() retorna una cadena de texto con todas las descripciones de los compras realizadas
         a cargo de un cliente en el sistema
     */
-
     public static String verComprasProductos() {
 
         String resultado = "";
@@ -124,6 +123,11 @@ public class Compra implements Serializable {
 
     }
 
+    /*
+        Este método se hace con la finalidad de poderlo llamar desde las clases del paquete uiMain,
+        ya que retorna un String con todas las compras de servicios que hayan en el ArrayList compras que sean instancia de
+        CompraServicios, no recibe parámetros y retorna un String
+     */
     public static String verComprasServicios() {
 
         String resultado = "";
@@ -142,7 +146,6 @@ public class Compra implements Serializable {
     /*
         El método agregarCompra() recibe por parámetro una compra para añadir a la lista de compras
     */
-
     public static boolean eliminarCompra(int codigo) {
 
         for (Compra compra : compras) {
@@ -154,6 +157,11 @@ public class Compra implements Serializable {
 
         return false;
     }
+
+    /*
+        Este método nos ayuda a filtrar compras por su código, recibe como paramétro un código de compra
+        y retorna la compra correspondiente
+     */
 
     public static Compra buscarCompra(int codigo) {
 
@@ -168,6 +176,10 @@ public class Compra implements Serializable {
 
     }
 
+    /*
+        El toString() se hace con el objetivo de imprimir las carácteristicas o atributos de la clase Compra,
+        sólo retorna un String
+     */
     @Override
     public String toString() {
         return "Compra{" +

@@ -136,12 +136,19 @@ public class Cliente implements Serializable, Comparable<Cliente> {
         return  "Se agrego la compra exitosamente";
     }
 
+    /*
+        En este método se busca agregar compras al ArrayList compras, este método recibe como parámetro una
+        CompraProductos y retorna un String
+    */
     public String agregarCompra(CompraProductos compraProductos){
         this.compras.add(compraProductos);
         return  "Se agrego la compra exitosamente";
     }
 
-    // En este metodo se calculan los gastos totales del cliente en todas sus compras
+    /*
+        En este metodo se calculan los gastos totales del cliente en todas sus compras,
+        no recibe ningún paramétro y retorna un Double
+    */
     public double calcularGastos() {
 
         double gastos = 0;

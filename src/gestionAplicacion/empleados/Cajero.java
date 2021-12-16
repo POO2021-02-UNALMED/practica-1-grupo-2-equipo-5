@@ -82,7 +82,11 @@ public class Cajero extends Empleado implements Serializable{
         }
     }
 
-    //Método para obtener el mejor cajero
+    /*
+        Método para obtener el mejor cajero, se basa en recorrer la lista de Cajeros y encontrar los que más dinero
+        hayan producido en ventas, se hace con la finalidad de implementar la funcionalidad de generar el informe de
+        la tienda, no recibe parámetros y retorna un String
+     */
     public static String mejorCajero() {
         String mejorCajero = "";
 
