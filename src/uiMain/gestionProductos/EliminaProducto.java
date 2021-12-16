@@ -6,6 +6,7 @@ import gestionAplicacion.productos.Producto;
 import java.util.Scanner;
 
 public class EliminaProducto {
+
     public static void mostarMenuEliminarProducto() {
         Scanner input = new Scanner(System.in);
         int codigo;

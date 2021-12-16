@@ -69,4 +69,9 @@ public class Cajero extends Empleado implements Serializable {
 
         return comisionTotal;
     }
+
+    public void agregarAProductosVendidos(ProductoVendido vendido) {
+        productosVendidos.add(vendido);
+    }
+
 }

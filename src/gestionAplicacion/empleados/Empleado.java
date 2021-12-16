@@ -138,5 +138,6 @@ public abstract class Empleado implements Serializable {
         empleados.remove(empleado);
     }
 
+    //Método para obtener los egresos por sueldos
 
 }

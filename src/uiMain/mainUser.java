@@ -57,13 +57,13 @@ public class mainUser {
 
         //compras pertenecientes al cliente 1
         Compra compra1 = new CompraProductos(123, "Sin descripcion","Calle 09 - 87", cliente1, "12/04/2021" );
-        ((CompraProductos) compra1).agregarProductoACompra(producto1);
-        ((CompraProductos) compra1).agregarProductoACompra(producto2);
-        ((CompraProductos) compra1).agregarProductoACompra(producto3);
+        ((CompraProductos) compra1).agregarProductoACompra(producto1, (Cajero) cajero1);
+        ((CompraProductos) compra1).agregarProductoACompra(producto2, (Cajero) cajero1);
+        ((CompraProductos) compra1).agregarProductoACompra(producto3, (Cajero) cajero1);
         cliente1.agregarCompra((CompraProductos) compra1);
         Compra compra2 = new CompraProductos(456, "Sin descripcion", "Transversal B", "01/12/2021", 0.2);
         compra2.setCliente(cliente1);
-        ((CompraProductos) compra1).agregarProductoACompra(producto4);
+        ((CompraProductos) compra1).agregarProductoACompra(producto4, (Cajero) cajero2);
         cliente1.agregarCompra((CompraProductos) compra2);
 
         Compra compra3 = new CompraServicios(789, "Preferencial", "Calle 24", cliente1, "2 horas");
