@@ -27,8 +27,8 @@ public class ClientesValiosos {
         System.out.println("Los clientes valisoso son: ");
         for (Cliente cliente : valiosos) {
             System.out.println("Nombre: " + cliente.getNombre());
-            System.out.println("C.C" + cliente.getCedula());
-            System.out.println("Gastos" + cliente.getGastos());
+            System.out.println("C.C: " + cliente.getCedula());
+            System.out.println("Gastos: " + cliente.getGastos());
             System.out.println("=================================");
         }
     }

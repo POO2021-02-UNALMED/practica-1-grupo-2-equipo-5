@@ -21,8 +21,8 @@ public class DevolucionDeCompra {
 
             System.out.println("=================================");
             System.out.println("Nombre: " + cliente.getNombre());
-            System.out.println("C.C" + cliente.getCedula());
-            System.out.println("Gastos" + cliente.getGastos());
+            System.out.println("C.C: " + cliente.getCedula());
+            System.out.println("Gastos: " + cliente.getGastos());
             System.out.println("¿Es este cliente?");
             System.out.println("1. Si, 2. No, deseo ver el siguiente");
             System.out.print("Indique su eleccion: ");
@@ -51,6 +51,7 @@ public class DevolucionDeCompra {
                             input.nextLine();
                             // Acá se determina si se devuelve la compra total o algun producto
                             if (opcion == 1) {
+                                // Se devuelve la compra completa
                                 ((CompraProductos) compra).devolver();
                                 System.out.println("Compra devuelta");
                                 return;
