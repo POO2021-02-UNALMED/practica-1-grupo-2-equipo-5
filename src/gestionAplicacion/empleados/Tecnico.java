@@ -82,7 +82,7 @@ public class Tecnico extends Empleado implements Serializable {
                 comisionTotal += servicio.getPrecio()*COMISION;
             }
         }
-
+        this.setComision(comisionTotal);
         return comisionTotal;
     }
 

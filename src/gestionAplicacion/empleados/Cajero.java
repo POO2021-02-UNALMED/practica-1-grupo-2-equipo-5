@@ -67,6 +67,7 @@ public class Cajero extends Empleado implements Serializable {
             comisionTotal += productoVendido.getPrecioVenta()*COMISION;
         }
 
+        this.setComision(comisionTotal);
         return comisionTotal;
     }
 
