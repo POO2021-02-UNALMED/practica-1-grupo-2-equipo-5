@@ -5,7 +5,7 @@ import gestionAplicacion.servicios.Servicio;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente implements Serializable {
+public class Cliente implements Serializable, Comparable<Cliente> {
 
     /*
         La finalidad de la clase consiste en guardar los datos de los
@@ -37,6 +37,16 @@ public class Cliente implements Serializable {
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
         clientes.add(this);
+    }
+    @Override
+    public int compareTo(Cliente cliente) {
+        if (this.gastos > cliente.gastos) {
+            return 1;
+        } else if (this.gastos < cliente.gastos) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
     // Se agrega el método toString() para mostrar todos los datos de los clientes
