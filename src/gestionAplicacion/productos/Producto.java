@@ -46,11 +46,11 @@ public class Producto implements Serializable {
 
     // Se establecen los métodos Getters & Setters
     public static ArrayList<Producto> getInventario() {
-        return productos;
+        return inventario;
     }
 
     public static void setInventario(ArrayList<Producto> productos) {
-        Producto.productos = productos;
+        Producto.inventario = productos;
     }
 
     public int getCodigo() {
@@ -153,16 +153,9 @@ public class Producto implements Serializable {
         return false;
     }
 
-    public static boolean eliminarProductoInvetario(int codigo) {
-
-        for (Producto producto : inventario) {
-            if (producto.codigo == codigo) {
-                inventario.remove(producto);
-                return true;
-            }
-        }
-
-        return false;
+    public static boolean eliminarProductoInvetario(Producto producto) {
+        inventario.remove(producto);
+        return true;
     }
 
     public static Producto buscarProducto (int codigo) {

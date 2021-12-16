@@ -15,7 +15,7 @@ public class EliminaProducto {
             System.out.print("Ingrese el codigo del producto a eliminar : ");
             codigo = input.nextInt();
 
-            boolean eliminado = Producto.eliminarProductoInvetario(codigo);
+            boolean eliminado = Producto.eliminarProductoInvetario(Producto.buscarProducto(codigo));
             if (!eliminado ) {
                 System.out.println("Esa compra no existe en el sistema, intente de nuevo");
             }

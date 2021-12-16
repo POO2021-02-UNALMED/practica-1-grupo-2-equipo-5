@@ -103,7 +103,7 @@ public class CompraProductos extends Compra implements Serializable, Devolucion 
     // un producto que se encuentre en el inventario.
     public String agregarProductoACompra(Producto producto, Cajero cajero) {
 
-        Producto.eliminarProductoInvetario(producto.getCodigo());
+        Producto.eliminarProductoInvetario(producto);
         ProductoVendido vendido = new ProductoVendido(producto.getPrecioCompra()*ProductoVendido.PORCENTAJE_GANANCIA,
                                                       "Sin descripcion");
 
