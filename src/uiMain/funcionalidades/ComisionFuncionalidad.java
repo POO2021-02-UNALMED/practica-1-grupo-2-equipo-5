@@ -26,26 +26,26 @@ public class ComisionFuncionalidad {
 
         //Imprime todos los empelados de forma desc y calcula la comisión total y se muestra en pantalla.
         for(Empleado empleado: empleados){
-            comisionTotal += empleado.getComision();
-
+            comisionTotal += empleado.calcularComision();
+            System.out.println();
             System.out.println("Nombre: " + empleado.getNombre());
             System.out.println("CC: " + empleado.getCedula());
-            System.out.println("Comision: " + empleado.getComision());
+            System.out.println("Comision: " + empleado.calcularComision());
             System.out.println("===================");
         }
         System.out.println("Total de comisión a pagar: " + comisionTotal);
         System.out.println("********************************************");
 
-        System.out.print("¿Desea subir el sueldo a los empleados más destacados (true) (false)?");
+        System.out.println("¿Desea subir el sueldo a los empleados más destacados (true) (false)? ");
         boolean desision = input.nextBoolean();
 
         //El usuario puede decidir si quiere subir el sueldo.
         if(desision){
             //Se le pide ciertos valores al cliente para cambiarle el sueldo a un empleado.
 
-            System.out.print("¿Cual es el valor minimo de comision para subir el sueldo?");
+            System.out.println("¿Cual es el valor minimo de comision para subir el sueldo? Valor (double)");
             double precioSubir = input.nextDouble();
-            System.out.print("Fracción a subir");
+            System.out.println("Fracción a subir (double): ");
             double frac = input.nextDouble();
 
             //Se muestran todos los usuarios escogidos para subirle el sueldo.
