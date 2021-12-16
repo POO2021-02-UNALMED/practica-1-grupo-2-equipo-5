@@ -23,10 +23,13 @@ import gestionAplicacion.servicios.Servicio;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class InformeTienda {
 
     public static void  generarInformeTienda() {
+
+        Scanner input = new Scanner(System.in);
 
         String informe = "INFORME PJ TECH" + "\n" +
                 "Ingresos Totales : " + getIngresosTotales() + "\n" +
@@ -37,6 +40,13 @@ public class InformeTienda {
                 "Cliente Mas Valioso : " + getMejorCliente();
 
         System.out.println(informe);
+
+        int opcion;
+
+        do {
+            System.out.print("1. Regresar : ");
+            opcion = Integer.parseInt(input.nextLine());
+        } while (opcion != 1);
 
     }
 
@@ -63,18 +73,22 @@ public class InformeTienda {
         return egresosCompraProductos + egresosPagoNomima;
     }
 
+    // Este método retorna las utilidades netas de la tiena restando los ingresos menos los egresos
     public static double getUtilidades() {
         return getIngresosTotales() - getEgresosTotales();
     }
 
+    //Este método retorna el mejor cajero de la tienda
     public static String getMejorCajero() {
         return Cajero.mejorCajero();
     }
 
+    //Este método retorna el mejor tecnico de la tienda
     public static String getMejorTecnico() {
         return Tecnico.mejorTecnico();
     }
 
+    //Este método retorna el mejor Cliente de la tienda
     public static String getMejorCliente() {
         Collections.sort(Cliente.getClientes(), Collections.reverseOrder());
 
