@@ -24,6 +24,7 @@ public class RegistroProducto {
         System.out.println("5: COMBOS");
         System.out.println("6: COMPONENTES");
         System.out.println("7: DRONES");
+        System.out.print("Indique su eleccion : ");
         int id_tipo = input.nextInt();
         Producto.tipo_producto tipo = null;
         switch (id_tipo){

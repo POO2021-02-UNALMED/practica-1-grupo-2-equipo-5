@@ -3,6 +3,7 @@ package gestionAplicacion.servicios;
 import gestionAplicacion.compras.Compra;
 import gestionAplicacion.compras.CompraProductos;
 import gestionAplicacion.compras.CompraServicios;
+import gestionAplicacion.productos.ProductoVendido;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -132,4 +133,16 @@ public class Servicio implements Serializable {
                 ", Compra de Servicios=" + compraServicios.getCodigo() +
                 '}';
     }
+
+    //Metodo para calcular los ingresos por ventas de servicios
+    public static double obtenerIngresosServicios() {
+        double ingresos = 0;
+
+        for (Servicio servicioPrestado : servicios) {
+            ingresos += servicioPrestado.getPrecio();
+        }
+
+        return ingresos;
+    }
+
 }

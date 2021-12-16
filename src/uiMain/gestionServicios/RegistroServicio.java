@@ -17,7 +17,7 @@ public class RegistroServicio {
 
         System.out.print("Precio: ");
         double precio  = input.nextDouble();
-        Servicio servicio = new Servicio(precio, descripcion, codigo);
+        new Servicio(precio, descripcion, codigo);
 
     }
 }

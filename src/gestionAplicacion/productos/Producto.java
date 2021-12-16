@@ -1,7 +1,5 @@
 package gestionAplicacion.productos;
 
-import gestionAplicacion.servicios.Servicio;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -115,7 +113,7 @@ public class Producto implements Serializable {
     }
 
     // metodo para agregar productos al inventario
-    public static String agregarProductoAInventario(Producto producto){
+    public static String agregarProductoAInventario(Producto producto) {
         Producto.inventario.add(producto);
         return "Se agrego el producto al inventario correctamente";
     }
@@ -187,4 +185,16 @@ public class Producto implements Serializable {
                 ", precioCompra=" + precioCompra +
                 '}';
     }
+
+    //Metodo para calcular los egresos por compras de productos
+    public static double obtenerEgresosProductos() {
+        double egresos = 0;
+
+        for (Producto producto : productos) {
+            egresos += producto.getPrecioCompra();
+        }
+
+        return egresos;
+    }
+
 }
